@@ -1,0 +1,1171 @@
+2015-03-02,Armon Dadgar,f4e5b10952,physical: Adding interface, in-mem implementation, and skeleton for Consul/File
+2015-03-05,Armon Dadgar,9f6ecdabc9,vault: First pass at a barrier
+2015-03-11,Armon Dadgar,df49aa1f88,vault: First pass at Unseal
+2015-03-11,Armon Dadgar,76870a1449,vault: Setup the mount tables after load
+2015-03-12,Mitchell Hashimoto,e3fbe54a04,http: mask user error away from unseal since its not actionable
+2015-03-13,Armon Dadgar,2ae7992a98,vault: integrate expiration manager with core setup/teardown
+2015-03-13,Mitchell Hashimoto,d39b117281,helper/backend: start this thing
+2015-03-15,JT,6aacbffde4,update hero
+2015-03-15,captainill,e165e89f08,update tagline margin
+2015-03-16,Mitchell Hashimoto,3f85dcba10,http: /v1/sys/mount DELETE
+2015-03-16,Armon Dadgar,68457c9b2d,vault: Adding sys/revoke
+2015-03-17,Armon Dadgar,8cd56d4058,vault: Adding policy parsing
+2015-03-18,Armon Dadgar,ae8de95e0f,vault: First pass token store
+2015-03-19,Armon Dadgar,8e29253c2b,vault: Change constant name
+2015-03-21,Mitchell Hashimoto,c3342cd344,logical/aws: refactor access key create to the secret file
+2015-03-24,Armon Dadgar,5cbecba333,logical: Special error for permission denied
+2015-03-27,Armon Dadgar,1607ddbde3,vault: Adding basic audit table load/unload
+2015-03-30,Mitchell Hashimoto,c67357342c,logical: add credential info to logical backend structures
+2015-03-31,Mitchell Hashimoto,d93bdacbbd,vault: require root token for seal
+2015-03-31,Mitchell Hashimoto,456c4b0b21,command/write: new format
+2015-04-01,Armon Dadgar,104c252283,audit: Adding basic interface methods
+2015-04-01,Mitchell Hashimoto,c6cfac1ff8,command/auth-disable
+2015-04-01,Armon Dadgar,10f6308ab9,vault: TODO cleanups
+2015-04-02,Mitchell Hashimoto,ce9ed56be6,http: help
+2015-04-03,Armon Dadgar,1d2feafee3,physical: Adding Consul backend
+2015-04-04,Mitchell Hashimoto,3111c2396e,api: client library methods to get tokens
+2015-04-07,Mitchell Hashimoto,ade573b84d,website: auth on the way
+2015-04-07,Mitchell Hashimoto,fee874632f,vault: proper meta parameter for vaultstorage (tests pass now)
+2015-04-08,Mitchell Hashimoto,b502a2b3d4,vault: lookup-self should allow unauthenticated requests
+2015-04-10,Mitchell Hashimoto,8a904cc828,website: vs
+2015-04-10,Mitchell Hashimoto,333bdac62d,vault: the expiration time should be relative to the issue time
+2015-04-13,Armon Dadgar,723860fa96,command: Set minimum TLS version to 1.2
+2015-04-14,Armon Dadgar,9597035488,physical: First pass at HABackend
+2015-04-15,Armon Dadgar,0123fdf9a4,vault: Allow AES key to be up to 256 bits. Fixes #7
+2015-04-17,Mitchell Hashimoto,fe747fbcaa,credential/*: adhere to new API
+2015-04-18,Mitchell Hashimoto,4501b62953,website: so much API docs
+2015-04-18,Mitchell Hashimoto,b37f8332ed,logical/consul: config/access is the new path for config
+2015-04-19,Mitchell Hashimoto,f14d970598,website: doc userpass
+2015-04-20,Armon Dadgar,538106db1c,website: document sys/leader
+2015-04-21,Mitchell Hashimoto,628d6e4e7a,audit: hash all the req/resp structures
+2015-04-22,Jack Pearkes,0095f1d388,website: use new step oriented system for interactive demo
+2015-04-23,Jack Pearkes,5696aa910a,website: "Launch Interactive Tutorial"
+2015-04-23,Armon Dadgar,13d47848c1,logical/framework: Supporting list of path map
+2015-04-25,Armon Dadgar,cc69073b37,website: adding mysql docs skeleton
+2015-04-27,Seth Vargo,6b62366d2b,Add Quick Start for Postgresql
+2015-04-27,Armon Dadgar,478a5965ee,secret/aws: Using roles instead of policy
+2015-04-27,Mitchell Hashimoto,af6f634149,Godeps to lock in dependencies
+2015-04-28,Mitchell Hashimoto,ae1c71085c,helper/passsword: fix windows compilation
+2015-04-28,Andrew Williams,cfe60c4846,website: fix small typo
+2015-04-28,Mitchell Hashimoto,f578efbd93,Merge pull request #61 from ceh/godep-cover
+2015-04-28,Mitchell Hashimoto,a0376a20f0,command/server: disable mlock in dev mode
+2015-04-28,Abhishek Chanda,aa90d268bf,Actually add the coverage script
+2015-04-28,Mitchell Hashimoto,f98ef07ca1,Merge pull request #86 from JuanitoFatas/master
+2015-04-30,Leo Cassarani,61841fd596,Add output of reading aws/config/root to the docs [ci skip]
+2015-05-02,Mitchell Hashimoto,0128f35b85,v0.1.1
+2015-05-03,Mitchell Hashimoto,0074f64701,Merge pull request #137 from ceh/make-bat-fix
+2015-05-05,Spencer Herzberg,c4472a2446,cleanup zk HA leftover docs
+2015-05-07,Armon Dadgar,47c71483ba,vault: fix detection of missing trailing slash. Fixes #157
+2015-05-09,Seth Vargo,9e0bafd0ef,Merge pull request #179 from philips/fix-spelling-error
+2015-05-11,Seth Vargo,74e1057259,Merge pull request #183 from knuckolls/patch-1
+2015-05-11,Mitchell Hashimoto,03073c289d,update CL
+2015-05-11,Mitchell Hashimoto,c559382c47,website: note PGP key
+2015-05-12,Mitchell Hashimoto,c8f023795e,terraform: remove CBD for now while TF bug exists
+2015-05-15,Nathan McCauley,47950d9efb,update info on keywhiz
+2015-05-18,Armon Dadgar,83bcac9cac,Merge pull request #218 from jefferai/master
+2015-05-20,Michael H. Oshita,c495d07d8a,Document that Vault Server needs to be running for vault help path
+2015-05-20,Armon Dadgar,628e102419,Merge pull request #222 from DavidWittman/config-backend-check
+2015-05-25,Ken Breeman,df08ed9722,Merge branch 'master' into physical_zookeeper_ha
+2015-05-27,Armon Dadgar,69320aeb33,Merge pull request #266 from hashicorp/f-http
+2015-05-27,Armon Dadgar,9747230ae5,vault: first pass at rekey
+2015-05-28,Armon Dadgar,4731c48948,vault: Adding VerifyMaster to Barrier
+2015-05-28,Armon Dadgar,fa9c85dbaf,vault: create upgrade path in HA mode
+2015-05-31,Chad Whitacre,2d442a2b5e,fix line wrapping
+2015-05-31,Seth Vargo,bdd6fed13f,Merge pull request #282 from whit537/patch-3
+2015-06-01,Seth Vargo,669686f654,Merge pull request #270 from sheldonh/no_export_vault_token
+2015-06-05,Jeff Mitchell,20ac7a46f7,Add acceptance tests
+2015-06-15,Armon Dadgar,61f7c098f7,Merge pull request #341 from ryancurrah/ryancurrah-doc-transit-echofix
+2015-06-17,Armon Dadgar,28dd283c93,builtin: fixing API change in logical framework
+2015-06-17,Armon Dadgar,ee176b2f5d,command/auth: warn about the VAULT_TOKEN env var. Fixes #195
+2015-06-18,Nate Brown,55e37392ad,Actually not logging auth in the response if nil
+2015-06-24,esell,e3a3fc8ab1,cleanup the code a bit
+2015-06-29,Armon Dadgar,1a085c1c89,vault: cleanups for the audit log changes
+2015-06-30,Karl Gutwin,6668a6d7ef,Website docs.
+2015-06-30,Vishal Nayak,d258b1819a,lease handling fix
+2015-07-01,Vishal Nayak,2ebd10cdf4,Vault SSH: review rework: formatted and moved code
+2015-07-05,Armon Dadgar,3af435d4b5,secret/transit: testing key derivation
+2015-07-06,Armon Dadgar,d9c7349ad3,website: clarify changes in addition to feedback
+2015-07-10,Vishal Nayak,c25525a22a,Vault SSH: Test case skeleton
+2015-07-13,Armon Dadgar,10f23df605,website: update HA status, discourage ZK
+2015-07-14,Bradley Girardeau,7ee2419323,ldap: add ability to set policies based on username as well as groups
+2015-07-22,Armon Dadgar,3c7f311181,Merge pull request #419 from nbrownus/telemetry_names
+2015-07-24,Armon Dadgar,49cdf87ab9,website: fixing details about HA backends
+2015-07-28,Daniel Kaffee,844cb49b38,made documentation a bit more clear
+2015-07-31,vishalnayak,e3cc910cea,Vault Test: Disabling mlock for logical.testing.Test()
+2015-08-04,Armon Dadgar,b380090c47,Merge pull request #489 from ekristen/github-fix
+2015-08-06,vishalnayak,044a2257e7,Vault SSH: Automate OTP typing if sshpass is installed
+2015-08-11,Armon Dadgar,f4c7846438,Merge pull request #509 from ekristen/github-fix
+2015-08-13,vishalnayak,2dd82aeb9a,Vault SSH: cidr to cidr_list
+2015-08-18,vishalnayak,2e6a087d22,Vault SSH: doc update
+2015-08-19,vishalnayak,de30c66fea,Vault SSH: Removing script file
+2015-08-20,Jeff Mitchell,358849fbc3,Change "lease" parameter in the generic backend to be "ttl" to reduce confusion. "lease" is now deprecated but will remain valid until 0.4.
+2015-08-24,vishalnayak,0843c3400b,Vault SSH: Documentation update
+2015-08-26,Jeff Mitchell,989b33483b,Ensure that the 'file' audit backend can successfully open its given path before returning success. Fixes #550.
+2015-08-27,vishalnayak,06ac073684,Vault SSH: Docs for default CIDR value
+2015-08-31,vishalnayak,f67a12266e,Vault SSH: refactoring
+2015-09-04,Armon Dadgar,4e77fd1e04,Merge pull request #591 from MarkVLK/patch-2
+2015-09-01,Jeff Mitchell,aadf039368,Add DynamicSystemView. This uses a pointer to a pointer to always have up-to-date information. This allows remount to be implemented with the same source and dest, allowing mount options to be changed on the fly. If/when Vault gains the ability to HUP its configuration, this should just work for the global values as well.
+2015-09-11,Tuomas Silen,154aada606,Cleanup defer func
+2015-09-15,Jeff Mitchell,6b00838e27,Move more cubby logic outside of router into auth setup
+2015-09-17,vishalnayak,16f531da3d,Userpass Bk: Added tests for TTL duration verifications
+2015-09-19,Jeff Mitchell,b03d89d974,Bump AESGCM version; include path in the GCM tags.
+2015-09-19,Jeff Mitchell,a439b483f5,Don't use leases on the generic backend...with a caveat.
+2015-09-24,Dominic Luechinger,886c67892d,Fixes docs for new JWT secret backend
+2015-09-27,Jeff Mitchell,23411f2ea0,Format token lease/TTL as int in JSON API when looking up
+2015-10-02,Jeff Mitchell,df90e664ad,Merge pull request #663 from curtisallen/update-acl
+2015-10-06,Jeff Mitchell,0e06b4e8e2,Rename NOBINTRAY to something more sensible
+2015-10-07,Jeff Mitchell,e20b080786,Merge pull request #680 from hashicorp/edit-this-page
+2015-10-09,Jeff Mitchell,a087e943c7,Fix output of token-create help to use ttl instead of lease
+2015-10-15,Jeff Mitchell,4e39da1079,Merge pull request #701 from levigross/master
+2015-10-23,voutasaurus,ad122c6aee,Merge branch 'master' of https://github.com/hashicorp/vault
+2015-10-29,Jeff Mitchell,d3aebadc3c,Fix wording
+2015-10-30,Seth Vargo,3e2c4ffb7b,Fix breaking API changes
+2015-11-03,Jeff Mitchell,05810ae786,Address review feedback
+2015-11-05,Jeff Mitchell,dafecff414,Switch etcd default port to 2379, in line with 2.x.
+2015-11-09,Jeff Mitchell,ee314634b6,Merge pull request #766 from hashicorp/issue-766
+2015-11-15,Jeff Mitchell,b2d2a11cb2,Merge pull request #775 from hashicorp/issue-771
+2015-10-02,Jeff Mitchell,41799529f7,Add allow_base_domain to control whether or not the actual base domain is allowed as a cert common name and/or DNS SAN
+2015-11-12,Jeff Mitchell,cf148d8cc6,Large documentation updates, remove the pathlength path in favor of making that a parameter at CA generation/sign time, and allow more fields to be configured at CSR generation time.
+2015-11-20,Jeff Mitchell,6af9eac08b,Documentation update
+2015-12-01,Jeff Mitchell,c84611ec1f,Have dist script publish and purge
+2015-12-09,Jeff Mitchell,53c363d308,Return 400 instead of 500 if generic backend is written to without data.
+2015-12-10,Andrew Stuart,a75a1a1ae0,Merge branch 'master' of https://github.com/hashicorp/vault
+2015-12-09,Andrew Stuart,e38596fc1c,Update tests and finish implementation of PKCS8 handling
+2015-12-14,Andrew Stuart,fdc42cf397,Merge branch 'master' of https://github.com/hashicorp/vault
+2015-12-14,Jeff Mitchell,b0b8d24bc0,CL++
+2015-12-17,Jeff Mitchell,61adc37bfd,changelog++
+2015-12-19,captainill,99d70e995a,capitol C in by hashicorp lockup
+2015-12-28,Greg G,261caad317,Fixed "edit this page" not clickable
+2015-12-30,Jeff Mitchell,d4a7eb8940,Merge pull request #892 from nickithewatt/token-lookup
+2016-01-04,Jeff Mitchell,4ac937a440,Address review feedback.
+2016-01-06,Jeff Mitchell,75973600cc,Merge pull request #907 from hashicorp/rekey-work
+2016-01-08,Jeff Mitchell,839b804e43,Some minor rekey backup fixes
+2016-01-12,Jeff Mitchell,45b96ed140,Address some more review feedback
+2016-01-14,Jeff Mitchell,ee7add27d7,Merge pull request #931 from hashicorp/sethvargo/deploy
+2016-01-08,Jeff Mitchell,4cc7694a3a,Add the ability to generate root tokens via unseal keys.
+2016-01-08,Dmitriy Gromov,6f50cd9439,Fixed duration type and added acceptance test for sts
+2016-01-19,Jeff Mitchell,cc0d88cabe,Address some listing review feedback
+2016-01-22,Raja Nadar,711b446ef7,mention that this is an unauthenticated endpoint
+2016-01-25,Jeff Mitchell,1c43a0148f,Document changes
+2016-01-26,Jeff Mitchell,7876b8b7fe,Use reflect.Value.String() rather than a type assertion.
+2016-01-27,Jeff Mitchell,21da89bef0,Changelog formatting
+2016-01-28,Raja Nadar,2270affc2f,fix return type of post /ssh/creds
+2016-01-28,Jeff Mitchell,3b22ab02c6,Add listing of roles to PKI
+2016-01-29,Jeff Mitchell,855985230f,Fix command status test with new return value
+2016-01-31,Jeff Mitchell,c60a9cd130,Remove grace periods
+2016-02-01,Jeff Mitchell,889c6b64c5,Merge pull request #1011 from hashicorp/readd-transit-upsert
+2016-02-02,Jeff Mitchell,2cf9afe5d6,Add test for HA availability to command/server
+2016-02-03,Jeff Mitchell,ff2781e3b4,Oops, we needed that, but for a different reason than the comment said. So put the test back but fix the comment
+2016-02-04,Jeff Mitchell,799b91f8b5,Add some extra info on the build to the changelog and bump the version in preparation for release
+2016-02-10,Jeff Mitchell,d76c3a7e56,Add note about client libraries to 0.5 upgrade page
+2016-02-14,Raja Nadar,d083f459bd,fixing response fields of /pki/issue
+2016-02-18,Jeff Mitchell,959064f722,Merge pull request #1074 from rajanadar/patch-13
+2016-02-18,Jeff Mitchell,a82942b7aa,Update .gitignore to remove overzealous application of 'pkg' shadowing vendor dir.
+2016-02-19,Jeff Mitchell,65494f8268,Merge pull request #1100 from hashicorp/issue-1030
+2016-02-19,Jeff Mitchell,d3af63193b,Add tests for minimum key size checking. (This will also verify that the key type matches that of the role, since type assertions are required to check the bit size). Like the rest, these are fuzz tests; I have verified that the random seed will eventually hit error conditions if ErrorOk is not set correctly when we expect an error.
+2016-02-22,Jeff Mitchell,7c60548b9a,More improvements to PKI tests; allow setting a specific seed, output the seed to the console, and split generated steps to make it understandable which seed is for which set of steps.
+2016-02-23,Jeff Mitchell,6fef0f2b30,Merge pull request #1121 from mhurne/improve-error-on-sts-read-with-arn-policy
+2016-02-24,Jeff Mitchell,25547d400b,Add upgrade information
+2016-02-25,Jeff Mitchell,8970f3aa68,Merge pull request #1131 from rmt/master
+2016-02-26,Jeff Mitchell,30be5da0bb,Fix tests
+2016-03-01,Vishal Nayak,1a8fc05a80,Merge pull request #1154 from hashicorp/ssh-docs-fix
+2016-03-01,vishalnayak,8f728f8ed3,changelog++
+2016-03-03,Jeff Mitchell,097e6ce93a,Move descriptions into const block
+2016-03-02,vishalnayak,258b4e6b10,Add vault/capabilities.go
+2016-03-04,vishalnayak,4f672fb1e0,changelog++
+2016-03-08,Jeff Mitchell,09070c4aca,Sanitize serial number in revocation path.
+2016-03-09,vishalnayak,2a35de81dc,AccessorID --> Accessor, accessor_id --> accessor
+2016-03-09,vishalnayak,b8bd534c53,In-URL accessor for auth/token/lookup-accessor endpoint
+2016-03-10,Seth Vargo,80d627fc0a,Parse HCL keys in command config
+2016-03-10,vishalnayak,82a9fa86ad,Add accessor flag to token-lookup command and add lookup-accessor client API
+2016-03-10,Jeff Mitchell,9e49463642,Fix typo
+2016-03-14,Jeff Mitchell,3368b9cdb7,Update app-id docs to use new endpoint
+2016-03-15,Jeff Mitchell,52c438062e,Add forgotten test
+2016-03-16,Jeff Mitchell,ba72ff8898,Remove dev from version
+2016-03-17,Jeff Mitchell,cfa94ec264,Update CHANGELOG text regarding enabling plaintext accessor audit logging
+2016-03-17,vishalnayak,56a9ac8f7c,Fix help descriptions
+2016-03-18,Vishal Nayak,26857bee52,Merge pull request #1233 from hashicorp/auth-token-restore
+2016-03-23,Vishal Nayak,b251010b85,Merge pull request #1254 from shokunin/master
+2016-03-31,Seth Vargo,1a3825b508,Merge pull request #1274 from gdevos/patch-1
+2016-04-01,Riley Guerin,5061b670db,change github example team to admins
+2016-04-05,Gábor Lipták,bda3af7dbb,Update transit read key output
+2016-04-05,Sean Chittenden,d0ace6f3c8,Back out changelog entry until PR merged
+2016-04-07,Jeff Mitchell,ef1b1a41a6,Construct token path from request to fix displaying TTLs when using create-orphan.
+2016-04-08,Kevin Pike,226a89d75e,Fix username generation
+2016-04-12,Jeff Mitchell,250aa228df,Merge pull request #1323 from hashicorp/sethvargo/ws_md
+2016-04-14,Vishal Nayak,00327a6027,Merge pull request #1332 from hashicorp/fix-revocation-output
+2016-04-22,Seth Vargo,c3a5bf11d4,Do not allow referrer to modify the parent
+2016-04-23,Sean Chittenden,0d3ce59542,Update vendor'ed version of hashicorp/consul/lib
+2016-04-25,Sean Chittenden,00d1e5abd7,Change to the pre-0.6.4 Consul Check API
+2016-04-06,Jeff Mitchell,c8afcafaf9,allow_instance_reboot -> allow_instance_migration
+2016-04-11,vishalnayak,9e57f66284,Added acceptance test for login endpoint
+2016-04-25,vishalnayak,9f06bb2cea,Added tests
+2016-04-28,vishalnayak,05c10dad94,minor updates
+2016-04-28,Sean Chittenden,01fac00f20,Remove useless return statement
+2016-05-02,Jeff Mitchell,06e2044372,Change UseToken mechanics.
+2016-04-22,Jeff Mitchell,ddec2ed86b,Slightly nicer check for LRU in policy store
+2016-05-03,Jeff Mitchell,5aebbcc566,changelog++
+2016-05-05,Jeff Mitchell,5b9458e697,Merge pull request #1381 from hashicorp/util-update
+2016-05-05,Jeff Mitchell,dd5321a86a,Switch whitelist to use longest max TTL
+2016-05-08,Sean Chittenden,0aad4e68a7,Bump Go to 1.6.2 for Travis (just added)
+2016-05-11,Jeff Mitchell,ea9734a6aa,changelog++
+2016-05-14,vishalnayak,116e2cf024,Fix framework rollback manager tests
+2016-05-16,Jeff Mitchell,99e1c2680a,changelog++
+2016-05-19,Jeff Mitchell,0b59a54837,Add unwrap command, and change how the response is embedded (as a string, not an object)
+2016-05-20,Kevin Pike,8caffae70f,Merge remote-tracking branch 'origin/master' into rabbitmq
+2016-05-25,Jeff Mitchell,7eebb734a4,Cut version 0.6.0-beta2
+2016-05-27,Jeff Mitchell,ba5dc348d8,Add test for renew/revoke to Consul secret backend
+2016-05-25,vishalnayak,d6d5dacb82,Set config access test case as an acceptance test and make travis happy
+2016-06-01,Vishal Nayak,19eb6e04f6,Merge pull request #1473 from hashicorp/ssh-host-checking
+2016-06-03,Jeff Mitchell,bec4557606,Merge pull request #1483 from hashicorp/scada
+2016-06-08,Vishal Nayak,8b15722fb4,Merge pull request #788 from doubledutch/master
+2016-06-08,Jeff Mitchell,9e4922e6d4,Merge pull request #1499 from hashicorp/toggleable-renew-for-tokencreate
+2016-06-08,Jeff Mitchell,da70b0fd99,Update version to rc1
+2016-06-09,Vishal Nayak,46669ac5bb,Merge pull request #1511 from hashicorp/github-auth-env
+2016-06-14,Jeff Mitchell,926e56eff0,Merge pull request #1520 from hashicorp/wrapinfo-accessor
+2016-06-15,Vishal Nayak,d232de6225,Merge pull request #1529 from maf23/spelling-fix
+2016-06-20,Vishal Nayak,9cfc0106fc,Merge pull request #1532 from hashicorp/vault-auth-path
+2016-06-21,vishalnayak,498bd58e6f,Print role name in the error message
+2016-06-23,Jeff Mitchell,cd41344685,Add some more testing
+2016-06-28,cara marie,8b11798807,removed option to create 1024 keybitlength certs
+2016-06-30,Jeff Mitchell,f9d40aa63b,Dockerize Postgres secret backend acceptance tests
+2016-06-30,Jeff Mitchell,5dc8394ad2,changelog++
+2016-07-01,Mark Paluch,f85b2b11d3,Support connect_timeout for Cassandra and align timeout.
+2016-07-05,Jeff Mitchell,b386c94ec6,Merge pull request #1588 from hashicorp/issue-1587
+2016-07-06,vishalnayak,c99cc155ff,Fix transit tests
+2016-07-07,Matt Hurne,8a2e9a316b,Add note about MongoDB secret backend to changelog
+2016-06-30,Mick Hansen,463294f4c6,handle revocations for roles that have privileges on sequences
+2016-07-13,Vishal Nayak,1970ad74d7,Merge pull request #1610 from hashicorp/min-tls-ver-12
+2016-07-18,Jeff Mitchell,1923ed3085,Update documentation around dynamodb changes
+2016-07-19,vishalnayak,51d6e362cf,changelog++
+2016-07-20,Nathan J. Mehl,83635c16b6,respond to feedback from @vishalnayak
+2016-07-20,Laura Bennett,e984551147,changelog++
+2016-07-21,vishalnayak,201ea85fea,Address review feedback by @jefferai
+2016-07-22,Jeff Mitchell,3bea6a7afe,Rename err var to be more clear
+2016-07-25,Jeff Mitchell,ecfaba1ac6,Add upgrade notes for LDAP
+2016-07-26,vishalnayak,bae3e09071,As it is
+2016-07-26,vishalnayak,415c463a87,Added omitempty to ClusterName and ClusterID
+2016-07-27,Vishal Nayak,bd682621e0,Merge pull request #1660 from TerryHowe/ansible-module-hashivault
+2016-07-29,Jeff Mitchell,1c6e59d9b3,oops, fix createAccessor
+2016-08-01,Laura Bennett,4e2e38d7f4,updated version to 0.6.1-rc2
+2016-08-03,Jeff Mitchell,1957de6d12,coreClusterPath -> coreLocalClusterPath
+2016-08-05,Jeff Mitchell,f1fb3edede,Don't mark never-expiring root tokens as renewable
+2016-08-08,Jeff Mitchell,c903fbe6f2,Merge pull request #1698 from hashicorp/issue-1263
+2016-08-08,Jeff Mitchell,d2b274eac9,Use policyutil sanitizing
+2016-08-09,Jeff Mitchell,be12a3c1ae,Minor test fix
+2016-08-09,Jeff Mitchell,c36fcfab6e,Don't allow a root token that expires to create one that doesn't
+2016-08-13,James Nugent,2e7a3aae7d,build: Add support for building on Illumos
+2016-08-14,Jeff Mitchell,6eca449261,Parameter change
+2016-08-17,Jeff Mitchell,09491388f4,Don't serialize the full connection state, instead just the peer certificates, and parse them on the other side
+2016-08-19,vishalnayak,c9393a7dae,s/advertisement/redirect
+2016-08-22,S,19f474433d,Update tokens.html.md
+2016-08-25,Jeff Mitchell,aad253a818,Output a better message if the version isn't known
+2016-08-29,vishalnayak,f3ea73d0a7,Description consistency
+2016-08-30,Vishal Nayak,763ab83d34,Merge pull request #1799 from hashicorp/fix-role-locking
+2016-09-01,Jeff Mitchell,7f0b68862e,Don't output key/value header if there are no values to display. (#1838)
+2016-09-08,Jeff Mitchell,3fc14e5662,Don't panic on bad auth path
+2016-09-13,Jeff Mitchell,40d03866de,changelog++
+2016-09-14,vishalnayak,5e7e30e33c,address review feedback
+2016-09-15,vishalnayak,e833846143,changelog++
+2016-09-19,Jeff Mitchell,9f9f8fc559,Merge branch 'master' of https://github.com/hashicorp/vault into master-oss
+2016-09-23,Evan Phoenix,d5038f34b0,Advertise the cluster_(id|name) in the Scada handshake (#1906)
+2016-09-26,Jeff Mitchell,273cb3c512,Add information about accessors to the token concepts page.
+2016-09-27,Jeff Mitchell,6410889f12,changelog++
+2016-09-28,Vishal Nayak,95aa7295a4,Merge pull request #1943 from hashicorp/iam-bounds-prefix
+2016-09-29,Vishal Nayak,567a521685,Merge pull request #1952 from stevenscg/stevenscg-docs-mysql-connection
+2016-10-03,Jim Weber,179c07075a,fixed some more issues I had with the tests.
+2016-10-04,vishalnayak,317210bb69,changelog++
+2016-10-05,Jeff Mitchell,f911375ca4,Update upgrade guide
+2016-10-10,Laura Bennett,1cc7c811c7,address feedback
+2016-10-14,Vishal Nayak,baece44ded,Merge pull request #1988 from mp911de/issue/refdocs-approle-post-on-secret-id-destroy
+2016-10-18,Chris Hoffman,4406a39da2,Add ability to list keys in transit backend (#1987)
+2016-10-21,ChaseLEngel,c36ab446f6,Update acl and policy tests to use Permissions.
+2016-10-27,Greg Look,0e6580efd9,Update libraries.html.md
+2016-10-29,Mark Paluch,cacaec11f5,Add Spring Vault to client libraries (#2042)
+2016-11-07,Joel Thompson,523de6b4d2,Add information on HMAC verification to transit docs (#2062)
+2016-11-11,Jeff Mitchell,920f928745,Allow wrapping to be specified by backends, and take the lesser of the request/response times (#2088)
+2016-11-17,Armon Dadgar,300b72e75c,Merge pull request #2108 from hashicorp/f-req-size-limit
+2016-11-28,Jeff Mitchell,bff8ce57ed,changelog++
+2016-12-01,Jeff Mitchell,77d804e483,Better handle nil responses in logical unwrap
+2016-12-06,mwoolsey,35888df486,Permissions were changed from a structure to and array of interfaces. Code optimization for acl.go. Fixed bug where multiple parameters would allow if second or following parameters were denied and there was a wildcard in allow.
+2016-12-14,James Turnbull,f595e40b8e,Edits to the deploy guide
+2016-12-16,Jeff Mitchell,4cc781f511,Fix up vendor reverting
+2016-12-28,Jeff Mitchell,0d92169aef,Update vs HSM text
+2017-01-04,Jeff Mitchell,d256ae265b,Add read locks to LookupToken/ValidateWrappingToken (#2232)
+2017-01-10,Vishal Nayak,d2c51af5cb,Merge pull request #2252 from hashicorp/mountentry-clone
+2017-01-12,vishalnayak,e7598ed5db,rekey: remove the check from vault/rekey.go in favor of check in http layer
+2017-01-13,Vishal Nayak,6485b2fd27,Merge pull request #2269 from gnur/fix-rabbitmq-docs
+2017-01-17,Jeff Mitchell,ac0f45e45c,Add nonce to unseal to allow seeing if the operation has reset (#2276)
+2017-01-18,vishalnayak,30a67c13fb,Fix file_path argument in audit's index.html
+2017-01-20,Brian Kassouf,3d7e5dcb61,First attempt at adding docs for permissions
+2017-01-23,Chris Hoffman,ad6f815308,Minor transit docs fixes
+2017-01-25,Jeff Mitchell,06b7bb2373,Merge pull request #2296 from hashicorp/rfay-20161230_add_cookbook_with_root_token_generation
+2017-02-01,Vishal Nayak,be9153cfcf,approle: secret-id listing lock sanity check (#2315)
+2017-02-05,Jeff Mitchell,1cf67916d2,Add quickdev to Makefile
+2017-02-07,Jeff Mitchell,9cf27804af,Bump dockerfile Go version
+2017-02-08,Jeff Mitchell,c01d394a8d,Add support for backup/multiple LDAP URLs. (#2350)
+2017-02-15,Jeff Mitchell,e2b7d43e01,Merge branch 'master-oss' into acl-parameters-permission
+2017-02-16,Jeff Mitchell,64d63ba55a,Add some repcluster handling to audit and add some tests (#2384)
+2017-02-17,Colin Arenz,b9e1ef142c,Fix listing of deep paths in PostgreSQL backend (#2393)
+2017-02-23,vishalnayak,ff7a1a810b,awsec2: markdown text alignment
+2017-02-26,Jeff Mitchell,7a31da8d94,Add dockertest.v3 to vendor
+2017-03-01,Jeff Mitchell,cdd02606c0,Rejig signature of last remote wal
+2017-03-02,Jeff Mitchell,f0963180a2,changelog++
+2017-03-03,Jeff Mitchell,3474a0a844,Add poison pill
+2017-03-03,Seth Vargo,4f5f1e7a52,Unify layout partials
+2017-03-07,Brian Kassouf,c823ad0597,Update locking functionaility
+2017-03-08,Seth Vargo,9aedb659a7,Update license
+2017-03-09,Brian Kassouf,d4ea6c1768,Add plugin features
+2017-03-14,Brian Kassouf,a6ae4bd356,wrap plugin database type with metrics middleware
+2017-03-16,Jeff Mitchell,614deacfca,Cut version 0.7.0
+2017-03-16,Seth Vargo,d873469210,Use relative links
+2017-03-17,Brian Kassouf,32b3bd8630,Add note about prefix/suffix globbing on policy parameters
+2017-03-21,Jack Pearkes,12f921ce27,website: update docs to clearly link to enterprise version
+2017-03-26,Seth Vargo,354da36a6f,Cleanup CSS
+2017-03-29,Seth Vargo,a7f7035b88,Add new colored header styles
+2017-04-04,Jeff Mitchell,661fc1f91f,changelog++
+2017-04-05,Brian Kassouf,8f88452fc0,move builtin plugins list to the pluginutil
+2017-04-10,Brian Kassouf,3c1c388589,Update backend tests
+2017-04-13,Jeff Mitchell,f92b173295,Verify that a CSR specifies IP SANs before checking whether it's allowed (#2574)
+2017-04-17,Mevan Samaratunga,2cc41a74a0,Added "Domain" configuration parameter to Swift provider to enable V3 authentication (#2554)
+2017-04-18,Jeff Mitchell,8b5097f307,changelog++
+2017-04-20,Brian Kassouf,f1fa617e03,Calls to builtin plugins now go directly to the implementation instead of go-plugin
+2017-04-24,Brian Kassouf,7e3f5e6985,Update root paths test
+2017-04-26,Brian Kassouf,37aacba0da,Change ttl types to TypeDurationSecond
+2017-04-27,Calvin Leung Huang,a5ddaabdba,Rename tests, use HandleRequest() for existing paths
+2017-04-28,Chris Hoffman,b4602fc244,Randomizing x coordinate in shamir split (#2621)
+2017-05-01,Chris Hoffman,3f52daca66,changelog++
+2017-05-02,vishalnayak,d07d3cbc9a,Added steps to check if invalid token is properly cleaned up
+2017-05-03,vishalnayak,b6843ec57d,Added summary logs to help better understand the consequence
+2017-05-03,Brian Kassouf,f424a9ad79,Use log to output errors instead of fmt
+2017-05-04,Jeff Mitchell,4b6d4e9e83,changelog++
+2017-05-04,Calvin Leung Huang,65b7bba360,Update mssql docs
+2017-05-05,Jeff Mitchell,c7b8f4aab8,Prep for 0.7.1
+2017-05-09,Jeff Mitchell,d10d291f25,Ensure we aren't leaking any open FDs in the file backend if we hit certain error conditions
+2017-05-11,Brian Kassouf,c55fd585f3,Add plugin level docs for what statements are supported and how they should be formatted
+2017-05-17,vishalnayak,fb15c97c6c,Fix index out of range bug in ParseKeyValues
+2017-05-24,Jeff Mitchell,0828b565c3,Remove non-gRPC request forwarding
+2017-05-26,Vishal Nayak,156d91321d,Input checks for policy rules (#2771)
+2017-06-05,Mevan Samaratunga,65b9c35229,fixed bug where the project name was not being read from configuration if it was provided via the "tenant" attribute. this was causing the swift client to crash with an EOF error. (#2803)
+2017-06-05,Jeff Mitchell,becf796c9a,Don't try to clean up upgrades if we're sealed
+2017-06-07,Jeff Mitchell,5be733dad5,changelog++
+2017-06-08,Matthew Irish,5190b87714,add min_encryption_version to the transit key response (#2838)
+2017-06-16,Jeff Mitchell,4d0a3b7023,Change package in azure test
+2017-06-17,Eugene Bekker,573fe37634,Add Zyborg.Vault PowerShell module to libs list (#2869)
+2017-06-21,Chris Kent,6ef0020be0,Added Enterprise links (#2906)
+2017-06-23,Seth Vargo,6af372f77b,Add diagram for EC2 Auth flow
+2017-06-30,vishalnayak,af12d056ba,fix expiration tests
+2017-07-05,Jeff Mitchell,c6820655bc,changelog++
+2017-06-20,Seth Vargo,7e08052e14,Use a time.Duration instead of an int for grace
+2017-07-02,Seth Vargo,21a17b69c3,Use the core client
+2017-07-13,Jeff Mitchell,e2fee08488,changelog++
+2017-07-17,Calvin Leung Huang,f2a89bb077,changelog++
+2017-07-25,Chris Hoffman,07ba8cd2eb,changelog++
+2017-07-26,Xiang Li,ff6eb1813d,physical: format fixes (#3062)
+2017-06-07,Filipe Varela,34db1208bb,Adds support for authentication, protocol version and connection timeout
+2017-07-31,Jeff Mitchell,82b99c0cc6,changelog++
+2017-08-02,Jeff Mitchell,d6fc971726,Add more TypeDurationSecond conversions
+2017-08-03,Jeff Mitchell,0ac531d3f4,Migrate physical backends into separate packages (#3106)
+2017-08-07,Jeff Mitchell,87099c03ae,Fix exporting stdAllowedHeaders
+2017-08-09,Jeff Mitchell,847c59fb5b,Fix cassandra doc link
+2017-08-14,Tony Cai,003bf92000,Add missing link to sidebar menu (#3153)
+2017-08-15,Jeff Mitchell,28defcab83,changelog++
+2017-08-16,Jeff Mitchell,c14d445de4,Bump go-plugin dep
+2017-08-16,Seth Vargo,72f66559eb,Initial pass at SSH CLI CA type authentication
+2017-08-23,Chris Hoffman,a7105536d6,Add GET variant on LIST endpoints (#3232)
+2017-08-30,Seth Vargo,aa1591cd3b,Remove fake news about custom plugins
+2017-08-31,Jeff Mitchell,7230d4da5c,Don't append a trailing slash to the request path if it doesn't actually help find something (#3271)
+2017-09-01,Lars Lehtonen,70d16fb072,Fix goroutine logging in cert test (#3224)
+2017-09-05,Chris Hoffman,16fbfeb5ef,ExpirationManager restoration to load in the background (#3260)
+2017-09-11,Chris Hoffman,09f272510f,Adding latency injector option to -dev mode for storage operations (#3289)
+2017-09-15,Jeff Mitchell,87581df7dd,changelog++
+2017-09-19,Jeff Mitchell,8e783e6eb1,Bump version
+2017-09-28,Nicolas Corrarello,bf68079051,Various fixes (Null pointer, wait for Nomad go up, Auth before policy creation)
+2017-10-04,Calvin Leung Huang,6c1ba24a7d,Fix plugin args output (#3424)
+2017-10-10,Jeff Mitchell,f6c277cd2d,Sync up server.go a bit
+2017-10-18,navinanandaraj,ece3c77e6f,Change list users to list all for session validation (#3469)
+2017-10-23,Jeff Mitchell,12e245852c,Sync
+2017-08-29,Seth Vargo,30dc835b2c,Update vendor complete
+2017-09-04,Seth Vargo,aea62c18c0,Unset VAULT_DEV_* in tests
+2017-09-04,Seth Vargo,78160740f0,Update audit-enable command
+2017-09-05,Seth Vargo,eece6eea4a,Update policy-delete command
+2017-09-05,Seth Vargo,a84b6e4173,Update unmount command
+2017-09-07,Seth Vargo,a34b2dae9f,Add "policy" subcommand
+2017-09-07,Seth Vargo,f5be8ed04b,Add "audit list" command documentation
+2017-09-07,Seth Vargo,0dc501cc9b,Add "policy fmt" command documentation
+2017-09-07,Seth Vargo,53f3db41b6,Add "lease" command documentation
+2017-09-12,Seth Vargo,b8e4b0d515,Standardize on "auth method"
+2017-10-04,Seth Vargo,44d298102e,Remove redundant TokenMeta
+2017-10-26,Jeff Mitchell,af1ae58c05,Merge branch 'master' into issue-3476
+2017-10-30,Brian Kassouf,4121791cb9,Add the ability to glob allowed roles in the Database Backend (#3387)
+2017-11-02,Jeff Mitchell,41568317e0,Redo API locking (#3508)
+2017-11-03,Vishal Nayak,d5ad857a86,Capabilities responds considering policies on entities and groups (#3522)
+2017-11-06,Jason Antman,ee438809d6,Add third party tools list to website (#3488)
+2017-11-07,Jeff Mitchell,61402cf522,Bump deps
+2017-11-09,Jeff Mitchell,0c3db8eaca,Remove allow_base_domain from PKI role output.
+2017-11-13,Brian Shumate,ac95095a99,DOCS: Update telemetry docs - fixes #3557 (#3571)
+2017-11-14,Jeff Mitchell,bdac185447,Cut version 0.9.0
+2017-11-17,Brian Kassouf,254d0ab784,Update README.md
+2017-11-29,Nicolas Corrarello,e6b3438d92,Return an error if accesor_id is nil
+2017-12-04,Paul Pieralde,3b56130f10,Fix docs for Transit API (#3588)
+2017-12-06,Brian Kassouf,f700c64551,Remove the note about GKE from the Kubernetes docs (#3658)
+2017-12-11,Chris Hoffman,326e1e3ea4,changelog++
+2017-12-15,Brian Kassouf,13b776e8e6,Fix plaintext backup in transit (#3692)
+2017-12-15,Calvin Leung Huang,d4f17b8f86,Use cleanhttp.PrintablePathCheckHandler to handle non-printable chara… (#3697)
+2017-12-18,Ernest W. Durbin III,a6c0194b68,Correct documentation for Kubernetes Auth Plugin (#3708)
+2017-12-20,Antergone,ccf10f64c0,check schema and table before create it (#3716)
+2018-01-03,Didi Kohen,ec8befbaac,Clarify that keybase is supported only in the CLI (#3744)
+2018-01-09,Justin Campbell,ad37f02d47,Revert gem updates, leave Nokogiri updated
+2018-01-15,Paweł Słomka,276ad1f529,Cleanup of deprecated commands in tests, docs (#3788)
+2018-01-17,Yoko Hyakuna,93601bb786,WIP - new guides
+2018-01-18,Calvin Leung Huang,2069614486,Don't call LeaseExtend on login renewal paths when period is provided (#3803)
+2018-01-19,Jeff Mitchell,ca2306860b,Fix compile
+2018-01-23,Jeff Mitchell,596febda60,Fix intermittent panic connecting to Duo (#3832)
+2018-01-24,Jeff Mitchell,0ffbf40186,changelog++
+2018-01-28,Jeff Mitchell,ebcc5a8b84,Prep for 0.9.3
+2018-02-01,Yoko Hyakuna,15ba1142f7,Incorporated review comments
+2018-02-03,Jeff Mitchell,59c483a01d,changelog++
+2018-02-07,cikenerd,f4f66a9779,Update  etcd storage doc (#3753)
+2018-02-07,vishalnayak,7244efe130,changelog++
+2018-02-09,Jeff Mitchell,0995bdbb0d,Simplify readonly view logic
+2018-02-12,Joel Thompson,d4465fdfcd,auth/aws: Improve role tag docs as suggested on mailing list (#3915)
+2018-02-14,Jeff Mitchell,0822882eee,changelog++
+2018-02-15,Matthew Irish,a2139a1d8e,changelog ++
+2018-02-17,Jeff Mitchell,fbcad150aa,Fix missing CommonName in subject generation
+2018-02-20,Jeff Mitchell,2e2c89a3d8,Cut version 0.9.4
+2018-02-22,Jeff Mitchell,b175583d28,Bump pkcs7 library version to fix #4024
+2018-02-23,Brian Kassouf,559f33c4f2,helper/gpgkeys: fix for vault 1.10 (#4038)
+2018-02-27,Jeff Mitchell,6189dc04ff,Remove structs package from auth/aws
+2018-03-02,Jeff Mitchell,4feb8b4457,Update gitignore
+2018-03-08,Jim Kalafut,3024869fdc,Fix instruction in installation docs (#4097)
+2018-03-09,Calvin Leung Huang,034f83f1cd,Audit HMAC values on AuthConfig (#4077)
+2018-03-15,Jeff Mitchell,abd90334fa,changelog++
+2018-03-17,Jeff Mitchell,c01e098a3b,changelog++
+2018-03-19,Jeff Mitchell,e8223859d0,changelog++
+2018-03-20,Jeff Mitchell,7219172fa3,Fmt
+2018-03-21,Brian Kassouf,1626803f3f,Update kv backend and add some docs (#4182)
+2018-03-23,Chris Hoffman,86002e4517,updating azure plugin and deps (#4191)
+2018-03-28,Jeff Mitchell,94b2878d1a,Merge branch '0.10-beta' into master-oss
+2018-03-30,vishalnayak,3722b23b7d,changelog++
+2018-04-02,Becca Petrin,792d219aa9,Move to "github.com/hashicorp/go-hclog" (#4227)
+2018-04-03,Jeff Mitchell,76f4801fb4,Add dev-ui target
+2018-04-04,Jeff Mitchell,29c25810fa,Revert "On 404 if there is no actual body, return orig err. (#4262)"
+2018-04-04,Vishal Nayak,f13a832a9f,TypeDurationSecond for ttl and max_ttl (#4268)
+2018-04-07,Jeff Mitchell,11352ceff6,Update vault-plugin-auth-gcp to get client invalidation fix
+2018-04-09,Calvin Leung Huang,64a58aa1f7,Fix pki tests (#4318)
+2018-04-09,Jeff Mitchell,824d1018d2,Don't run every tune function every time tune is called. (#4325)
+2018-04-11,Benjamin Lupton,b6164532be,changelog: fixed some spelling mistakes (#4331)
+2018-04-13,Jeff Mitchell,b65832d08a,Add ability to disable an entity (#4353)
+2018-04-17,Vishal Nayak,f5bd851312,external identity groups across mounts (#4365)
+2018-04-18,vishalnayak,585048fa30,changelog++
+2018-04-20,Matthew Irish,7763007cf5,UI - Login fix (#4403)
+2018-04-23,vishalnayak,4ee66b5958,fix path regex and role storage
+2018-04-24,Calvin Leung Huang,ea63ed27f0,Refactor renewer tests (#4433)
+2018-04-24,vishalnayak,a030db2af8,s/enable_local_secret_ids/local_secret_ids
+2018-04-25,Jeff Mitchell,a1b6942cd2,changelog++
+2018-04-26,Jeff Mitchell,78bb9d777b,Add ability for revoke-prefix and revoke-force to work on single leases (#4450)
+2018-05-02,Laura Uva,765b1a0cb0,Payload key should be dr_operation_token (#4498)
+2018-05-07,Jeff Mitchell,cd603e299c,changelog++
+2018-05-09,Jeff VanSickle,cc800b649a,Update jq path for "excited" in JSON output example (#4531)
+2018-05-10,Matthew Surabian,39f2d66eb7,DynamoDB Deprecation Fixes (#4534)
+2018-05-11,Calvin Leung Huang,1e23751a6e,Token store tests (#4549)
+2018-05-17,Jim Kalafut,e47c602654,Fix GCP API parameter docs
+2018-05-18,Jeff Mitchell,320edcc6b1,changelog++
+2018-05-20,Jeff Mitchell,d9535101c3,More work on recovery test
+2018-05-21,Jeff Mitchell,20f78c4204,Address feedback
+2018-05-22,Matthew Irish,42b329eb25,fix issue where unwrapping a response with an auth block wouldn't work (#4611)
+2018-05-25,Nicholas Jackson,61e0eda70c,Breakout parameters for x.509 certificate login (#4463)
+2018-05-25,Joshua Ogle,90a9a9a0ba,Update upgrade link
+2018-05-29,Kloppi313,3325813341,Typo in operator_rekey.go (#4646)
+2018-05-29,Jeff Mitchell,4604e723e1,changelog++
+2018-05-30,Jeff Mitchell,f64b4b2e5f,Update kv plugin
+2018-06-01,Jeff Mitchell,013e2167dd,Show mount accessors in normal secrets/auth list commands (#4676)
+2018-06-04,Jeff Mitchell,1865609432,changelog++
+2018-06-05,Jeff Mitchell,5a1299cf3c,Prep for release
+2018-06-08,Chris Hoffman,0d9a4142c6,Update gcpckms.html.md
+2018-06-11,Jeff Mitchell,c70703985b,Add context handling to Consul operations (#4739)
+2018-06-13,Brian Kassouf,2fbe04132c,Update replication status (#4761)
+2018-06-15,Matthew Irish,3c6bec9113,UI - auth method edit (#4770)
+2018-06-18,Ryan Loomba,b2bb13221c,fix typo in Vault Encryption as a Service Guide (#4789)
+2018-06-19,Jeff Mitchell,069ae7b87d,Simplify logic
+2018-06-25,Becca Petrin,df18871704,fetch the runes and text encoding packages (#4831)
+2018-07-02,Jeff Mitchell,24c776180b,Fix tuning visibility in CLI (#4827)
+2018-07-06,Jeff Mitchell,1f8dfc9410,changelog++
+2018-07-10,Joshua Ogle,e3178685e5,Fix info-table-row in alias metadata
+2018-07-11,Seth Vargo,c4d57245f2,Update GCP docs (#4898)
+2018-07-13,Jeff Mitchell,11c8eb896f,Change x/net context package to go stdlib
+2018-07-17,Becca Petrin,e6bdfa288a,fix possible panic (#4942)
+2018-07-20,Brian Kassouf,e3dc93c50c,plugins: Allow the server to receive large messages (#4958)
+2018-07-24,Chris Hoffman,00acb896a8,changelog++
+2018-07-24,Matthew Irish,aeef351629,e.errors not e.error (#4990)
+2018-07-30,Chris Hoffman,5451dffc44,do not grab statelock when requested not to (#5015)
+2018-08-03,Jim Kalafut,45341f911c,Update GCP auth plugin (#5043)
+2018-08-07,Ian Grayson,0d5dd986ba,Update policies.html.md (#5007)
+2018-08-10,Jim Kalafut,7b9fee7b2d,Add RDS notes to MSSQL docs (#5062)
+2018-08-13,Yoko,84e8c92e44,[Guide] Control Groups (#5072)
+2018-08-15,Joshua Ogle,ef98c46283,Don't float tag in sidebar unless fullhd
+2018-08-16,Becca Petrin,d3f8eabb9b,Add alicloud auth (#5123)
+2018-08-16,Brian Kassouf,81309cef02,Update upgrade-to-0.11.0.html.md
+2018-08-21,Jeff Mitchell,fe309723c9,Add the ability to specify token CIDR restrictions on secret IDs. (#5136)
+2018-08-22,Jeff Mitchell,be0ed63f03,Get reflect2 into vendoring
+2018-08-24,Laura Gjerman-Uva,12d1f1ef7e,Update ad/creds/:rolename endpoint to include the table with method/path for consistency/clarity. Also, remove payload.json from example, since this endpoint doesn't take a payload. (#5172)
+2018-08-27,Jeff Mitchell,5bcfbf1ad8,Allow fallback to non /-suffixed path for list acling (#5197)
+2018-08-28,Jeff Mitchell,54c4cefca0,Update upgrade guide for 0.11.0
+2018-08-29,Jeff Mitchell,ab5966d44a,Move things back
+2018-08-31,Yoko,cdfde4c4c2,[Guide] Updates on Namespaces guide (#5243)
+2018-09-04,Joel Thompson,f39268f950,auth/aws: Fix outdated help texts (#5253)
+2018-09-05,Jeff Mitchell,ed370aabca,changelog++
+2018-09-05,Andy Manoske,09a861faf8,Update community.html.erb
+2018-09-07,mg,18569d78be,resolve incorrect scope (#5307)
+2018-09-14,Jeff Mitchell,c959f2f104,changelog++
+2018-09-19,Becca Petrin,d76e67afc7,add alicloud secrets engine (#5352)
+2018-09-21,Brian Shumate,9dc2a85050,Update screenshot (#5378)
+2018-09-25,Brian Kassouf,1bcc20d254,changelog++
+2018-09-26,Andy Manoske,5c6f5fa97b,Delete partnerships.html.erb
+2018-09-27,Chris Hoffman,03883ed830,changelog++
+2018-10-01,Calvin Leung Huang,3058e9b86a,Add denylist check when filtering passthrough headers (#5436)
+2018-10-02,Matthew Irish,83d4cef45c,UI - token expiration calculation (#5435)
+2018-10-02,Brian Kassouf,760aca7055,mailto link (#5448)
+2018-10-05,Jim Kalafut,4731f1319c,Fix docs typos
+2018-10-04,Vishal Nayak,26aeeee077,Added test for verifying member group id deletion (#5469)
+2018-10-09,Calvin Leung Huang,8430fab8dd,Remove unnecessary test (#5483)
+2018-10-12,Yoko,25eb8a8ce1,[Guide] Fixed issue 5497 (#5508)
+2018-10-16,Jeff Mitchell,231c325770,Merge branch 'master-oss' into 1.0-beta-oss
+2018-10-18,vishalnayak,70d35c8d1d,changelog++
+2018-10-05,Matthew Irish,4dce16776f,adjust secret-edit component and associated templates to work for v1 and v2
+2018-10-15,Matthew Irish,712e3e73ec,add secret metadata editing and fix v1 links
+2018-10-19,Chris Hoffman,2ee62e004d,trying to fix cassandra running on travis
+2018-10-19,Jeff Escalante,7e0b47df28,fix docs sidebar issue, update product subnav (#5564)
+2018-10-22,Jeff Mitchell,4d73667667,changelog++
+2018-10-23,Jeff Mitchell,2e1953bd93,changelog++
+2018-10-23,Mike Wickett,e5e5b5c748,website: fix small font size on code samples
+2018-10-25,Chris Hoffman,5274fe83d0,changelog++
+2018-10-29,Christophe Tafani-Dereeper,74bf554666,Fix typo ('Gase' -> 'Case') (#5638)
+2018-10-31,Brian Shumate,ea69d160d3,docs: update JWT auth method (#5655)
+2018-11-01,Dilan Bellinghoven,f99afb9575,command/agent/sink/sink.go: This fix solves the problem where when multiple file sinks are specified in the agent HCL file, there is unexpected behavior (#5610)
+2018-10-31,Noelle Daley,6aee9b33a2,style ui not bundled page
+2018-11-05,Calvin Leung Huang,8fe7ab3fce,Use Truncate instead of Round on duration diff (#5691)
+2018-11-06,Jeff Mitchell,1a31603dcf,Better documentation around `increment`
+2018-11-08,vishalnayak,1acec98b2f,changelog++
+2018-11-12,Jeff Mitchell,1ec2aba180,Add note about seal migration not being supported for secondaries currently (#5762)
+2018-11-13,Cole Mujadzic,6d13df8a19,Update intro link in README (#5775)
+2018-11-03,Joshua Ogle,ab00bc8d96,Replaced more old empty states
+2018-11-16,Jeff Mitchell,5be434b97d,changelog++
+2018-11-19,Jennifer Yip,67b931d49e,Add consent manager to vaultproject.io (#5808)
+2018-11-20,Chris Hoffman,c1160dea53,changelog++
+2018-11-27,Joshua Ogle,4829a8b175,Merge pull request #5853 from hashicorp/ui-license
+2018-12-03,Calvin Leung Huang,e9751fdfc5,Set request token entry within fetchACLTokenEntryAndEntity (#5880)
+2018-12-05,Jim Kalafut,d05a8df8f7,Update downloads.html.erb (#5899)
+2018-12-11,Brian Kassouf,4511832bdf,Fix plugin reload when in a namespace (#5937)
+2018-12-12,Jeff Mitchell,de1fa7a467,changelog++
+2018-12-14,Jeff Mitchell,8bcd7a2454,Prep for release
+2018-12-20,Becca Petrin,d2789f4000,Merge pull request #5892 from jen20/jen20/dynamodb-capacity-doc
+2019-01-07,Pierre-Alain TORET,2276847640,Allow to build on DragonFlyBSD (#5950)
+2019-01-10,vishalnayak,1c44ec7839,changelog++
+2019-01-15,Brian Kassouf,b8d470ccc4,changelog++
+2019-01-18,Riley Lahd,b436df67e9,Consider whole response in UI console when missing auth, data and wrap_info for non writes/deletes (#6073)
+2019-01-23,Jeff Mitchell,a878f73d3c,Rename glob -> prefix in ACL internals (#6086)
+2019-01-28,Jeff Mitchell,f55dafbf6a,Force circonus v2 as directed by them
+2019-01-30,Jim Kalafut,0377c836c1,Add json.Number handling to TypeHeader (#6134)
+2019-02-04,Becca Petrin,077aa1bf80,Don't run MSSQL revocations as a transaction (#6154)
+2019-02-07,Martins Sipenko,f51e49e581,Fix section heading size (#6137)
+2019-02-11,Giacomo Tirabassi,75266af3d3,remove panicking and added usage (#6208)
+2019-02-13,Brian Shumate,a4b63b5187,Update configuration/listener documentation (#6228)
+2019-02-14,Vishal Nayak,e39a5f28df,Vault Agent Cache (#6220)
+2019-02-15,ncabatoff,8e4ea903c8,Fix TestSysMounts, TestSysMounts_headerAuth. (#6246)
+2019-02-20,Brian Kassouf,9578cf3422,changelog++
+2019-02-21,Jim Kalafut,143412d58e,Fix agent test (#6281)
+2019-02-28,Anton R. Yuste,eb9574e367,Specify the userpass name creating the alias entity (#6289)
+2019-03-01,vishalnayak,cb71144203,Agent config vault block should be optional
+2019-03-04,martinwaite,05240c26d5,Batch hmac - (#5850) (#5875)
+2019-03-05,Vishal Nayak,d94c646a6d,Explicit setting of url fields (#6349)
+2019-03-06,Calvin Leung Huang,e57416c93d,Refactor handleCacheClear input params (#6350)
+2019-03-08,Calvin Leung Huang,30a6d9f1c0,testing: allow logger and audit backends to be set in TestCoreWithSealAndUI (#6388)
+2019-03-14,Matthew Bamber,cd0c36f6d6,Fix SSH zero address OTP delete (#6390)
+2019-03-15,Michel Vocks,9fb7285030,Docs: Update Agent overview page (#6420)
+2019-03-18,Jeff Mitchell,74ba4f72aa,Prep for release
+2019-03-22,Alex Sherwin,fb17862936,Fixed grammatical issue in Auth Methods overview (#6456)
+2019-03-26,Matthew Irish,81425f1511,use proto() not prototype (#6474)
+2019-03-28,Matthew Irish,eb531542cd,changelog++
+2019-04-01,ncabatoff,0b05c86f8c,Add support in Agent for running cache+auto_auth without any sinks (#6468)
+2019-04-01,Brian Kassouf,187a234fff,Update plugin.go
+2019-04-03,Jan Brun Rasmussen,678bf7d0cf,Update OIDC docs for Azure (#6524)
+2019-04-05,Jeff Mitchell,f1a4bd9617,changelog++
+2019-04-08,Jeff Mitchell,8d15b09ed1,Sync over
+2019-04-10,vishalnayak,f8fcafd38a,changelog++
+2019-04-12,Michel Vocks,2ee02ef6da,Fixed small issues in identity group alias API docs (#6569)
+2019-04-12,Jeff Mitchell,916205b8f6,Fix some test breakages
+2019-04-15,Becca Petrin,6773ffbdd1,Add explanation to dbplugin.Database (#6581)
+2019-04-16,Matthew Irish,e6ec125ead,UI - write without read for kv (#6570)
+2019-04-22,ncabatoff,0f1569b7f5,Merge multiple functions for creating consul containers into one. (#6612)
+2019-04-26,Jim Kalafut,b8c8d48d4a,Minor GCP docs fixes (#6644)
+2019-04-29,Jim Kalafut,6cd9580476,changelog++
+2019-05-02,Mark Gritter,f03bcf337a,Merge branch 'master' into fix-ou-ordering
+2019-05-06,mgritter,a6614952fe,changelog++
+2019-05-09,ncabatoff,1d13290b36,Refactor cert util (#6676)
+2019-05-09,Joshua Ogle,8bfc86d487,Merge pull request #6626 from hashicorp/ui-toolbar
+2019-05-14,Jeff Mitchell,0910a03c77,Fix recovery key backup path documentation
+2019-05-20,Matthew Irish,c23c50b4d2,UI - add wormhole div for ember-basic-dropdown (#6760)
+2019-05-24,Srikanth Venkatesh,7a9714f6c3,Fixed typo in documentation on vault internals/architecture (#6781)
+2019-06-03,Madalyn,890cf8acc9,use ember-power-select-with-create instead of ember-power-select (#6728)
+2019-06-06,Jeff Mitchell,946164180d,Update vendoring
+2019-06-14,Jeff Mitchell,263b96ef4e,Tokenhelper v2 (#6662)
+2019-06-17,Becca Petrin,229145038d,fix more typos
+2019-06-18,Becca Petrin,cc301dda64,Merge pull request #6911 from hashicorp/fix-aws-region-test
+2019-06-19,Jim Kalafut,7846095a8d,changelog++
+2019-06-20,Matthew Irish,41973bbf9a,changelog++
+2019-06-20,Jeff Mitchell,a342dcbb29,Sync
+2019-06-21,Brian Kassouf,91b5300734,Fix key upgrade and raft tests (#6949)
+2019-06-23,Jeff Mitchell,67283848d3,Fix test
+2019-06-26,Matthew Irish,7977a0d516,UI KMIP CA (#6983)
+2019-06-27,Jeff Mitchell,7e230684aa,Standardize how we format deprecated values in traditional path-help (#7007)
+2019-06-30,Mike Ruth,8be0bb77e2,Include Daytona as a third party tool (#6999)
+2019-07-01,Jeff Mitchell,cafee24ecb,Tokenutilize Okta (#7032)
+2019-07-02,Matthew Irish,5e002bec87,UI - add delete for the various kmip models (#7015)
+2019-07-02,Jeff Mitchell,b6699afb7e,Update api/sdk
+2019-07-03,Noelle Daley,1760c321db,Fix barchart bugs (#7063)
+2019-07-05,Jeff Mitchell,3439a34989,Migrate build to use go modules
+2019-07-09,Jeff Mitchell,cdd1893eac,Bump api's sdk
+2019-07-18,Jason O'Donnell,bed75df086,doc: Add default SSL note to PG storage (#7125)
+2019-07-19,Mike Jarmy,fea94ac971,changelog++
+2019-07-23,ncabatoff,f454a6fac1,TestCassandraBackend times out pretty often on the ent build.  Bump (#7130)
+2019-07-24,Srikanth Venkatesh,94db194a4d,fixed a typo in an exception message regarding absence of config files while starting up vault (#6816)
+2019-07-25,Jeff Mitchell,a3f62c5b3a,Pull in tagged api/sdk
+2019-07-26,ncabatoff,d177fc7dd1,Generalize and improve testcluster-building code (#7177)
+2019-07-30,Jeff Mitchell,2eb9e835e1,Add 1.2.0 upgrade guide
+2019-08-01,Matthew Irish,027148692c,ancestorKeysForKey always returns an array (#6205)
+2019-08-05,Matthew Irish,64cfb75729,changelog++
+2019-08-14,Jim Kalafut,56189577cf,Update PCF Auth plugin (#7306)
+2019-08-15,ncabatoff,737b025a06,changelog++
+2019-08-20,Chris Hoffman,28d1353ade,changelog++
+2019-08-26,Becca Petrin,5a8fe8280f,Update CHANGELOG.md
+2019-09-04,Jeff Mitchell,82f8309ab6,Update api's SDK
+2019-09-06,Calvin Leung Huang,2ce78375f6,logical/request: store the entire http.Request object instead (#7412)
+2019-09-13,Chris Hoffman,f53d72c8b7,changelog++
+2019-09-18,Michael Gaffney,c69481ebe2,Fix the transit trim key api doc (#7453)
+2019-09-25,Noel Quiles,6d5fbab775,Update hashi-docs-sitemap to v0.1.6 (#7413)
+2019-10-01,Jim Kalafut,fe44ee073b,Add 1.2+ role parameters back to JWT API docs (#7544)
+2019-10-03,Chris Hoffman,999ed2a662,changelog++
+2019-10-07,Calvin Leung Huang,f42a2b99a0,docs: add sys/host-info API docs (#7563)
+2019-10-10,ncabatoff,eea8bad656,changelog++
+2019-10-14,Calvin Leung Huang,760c608745,ci: extend test timeout to 60m (#7647)
+2019-10-15,Brian Shumate,ee644eee30,Docs: update Oracle Database Secrets Engine API (#7520)
+2019-10-16,Becca Petrin,4ed9082aa3,changelog++
+2019-10-17,Jim Kalafut,0272c964c1,Update OIDC provider doc
+2019-10-22,ncabatoff,c49cb5b362,Use docker instead of an external LDAP server that sometimes goes down (#7522)
+2019-10-24,Jeff Escalante,9c33f74dab,Update ruby dependencies (#7720)
+2019-10-25,Matthew Irish,657477e941,embed yarn (#7740)
+2019-10-28,Joe Dollard,4e4d7ad520,support setting the API client retry policy (#7331)
+2019-10-30,Brian Kassouf,9f5c9872bd,changelog++
+2019-11-05,Jeff Mitchell,986a88bf26,Don't allow registering a non-root zero TTL token lease (#7524)
+2019-11-06,Chris Hoffman,15f3e122f3,updating community page (#7831)
+2019-11-08,Sebastian Gumprich,c4e73cffa3,update oidc azure docs to make it readable (#7832)
+2019-11-11,Calvin Leung Huang,f4ea6d6653,debug: fix test typo (#7862)
+2019-11-13,Jim Kalafut,d0e7ed95bc,changelog++
+2019-11-20,Clint,aaabeff479,Agent Template: check rendering to match expectations (#7899)
+2019-11-25,Brian Shumate,5293ce7cfc,Docs: Secrets engines: KMIP (#7932)
+2019-12-03,Clint,a4d0ca8e6d,Update CHANGELOG.md
+2019-12-11,Clint,3f62e7f30b,Transit: error when restoring to a name that looks like a path (#7998)
+2019-12-16,Michel Vocks,9d968accf0,Docs: Add missing KV V2 version argument to API docs (#8018)
+2019-12-18,Michel Vocks,488be87f67,Fix error handling during client TLS config setup (#8025)
+2019-12-20,Angel Garbarino,70d2b3eed8,change height to min-height to prevent overflow (#8065)
+2020-01-07,Noelle Daley,5e970a4220,upgrade handlebars (#8112)
+2020-01-10,Michel Vocks,7ebb303571,Fix DB static role credential rotation replication issue (#8105)
+2020-01-15,Michel Vocks,7c6d12ffb4,Add TLS options per Nomad backend (#8083)
+2020-01-17,Brian Kassouf,981a856e88,Fix panic when listener fails to startup (#8174)
+2020-01-21,Brian Kassouf,c430484206,changelog++
+2020-01-23,Mike Ruth,3e66f5aa9a,Update API to include roleset TTL parameter (#8231)
+2020-01-27,Theron Voran,b5bcd61d19,Show bound_service_accounts in gce example (#8236)
+2020-01-30,Sarai,5a8f47bf40,Fix broken link (#8259)
+2020-02-03,Michael Golowka,80c3b5245e,Update changelog with database plugin bugfixes
+2020-02-06,ncabatoff,436c9635f6,changelog++
+2020-02-11,Chelsea Shaw,1bb54e3b65,UI feature: dart sass (#8327)
+2020-02-13,Michael Golowka,33a7011e99,Update Oracle DB secrets docs to reflect support for static roles (#8168)
+2020-02-14,Clint,f0e4c56ed0,Docs enforce autoauth token (#8270)
+2020-02-15,Jason O'Donnell,7d550e24da,Add OpenLDAP Secret Plugin (#8360)
+2020-02-19,Sam Salisbury,e6336e4ca8,ci: fix website docker image script
+2020-02-19,Patrick Bernal,d0d91d1a6f,changelog++
+2020-02-20,Angel Garbarino,2de3d1e150,Update CHANGELOG.md
+2020-02-21,tionebsalocin,211345551f,[Doc] Fix curl example syntax in the plugins reload backend (#8380)
+2020-03-02,Chelsea Shaw,e0e3738a9f,skip go tests on ui and doc branches (#8372)
+2020-03-05,Angel Garbarino,a802660ca0,Improvement: give option to refresh namespace dropdown (#8442)
+2020-03-06,Jason O'Donnell,fdcec2c3e6,doc: update openldap with racf schema support (#8491)
+2020-03-11,Jeff Mitchell,c53e0c8ebf,Remove misleading comment
+2020-03-13,Angel Garbarino,76880f7235,Bug fix: add in missing curly braces to demote danger message (#8555)
+2020-03-17,Angel Garbarino,c123bdc1d3,Bug Fix: allow certificates to be copy/pasted on LDAP auth config (#8573)
+2020-03-24,Adrian Todorov,1de3280409,fix extensions name in client signing example (#8593)
+2020-03-30,aphorise,03d85d08df,Overtabed example corrected. (#8633)
+2020-04-02,Michel Vocks,7c7a769320,Fix outdated comment about logical request path (#8653)
+2020-04-07,Calvin Leung Huang,867218c119,site: update to version 1.4.0, remove rc download box (#8693)
+2020-04-13,Martin Hristov,f525f38c81,Fixing a docs typo (#8729)
+2020-04-16,Calvin Leung Huang,6f7aac0726,core: change rawConfig to be atomic.Value (#8755)
+2020-04-22,Jeff Escalante,1263c1a6eb,update website readme (#8739)
+2020-04-26,Michael Hofer,670f00bdde,Fix typo in Entropy Augmentation docs sales contact link (#8851)
+2020-04-30,Yong Wen Chua,5fdae00c58,[auth/gcp] Add missing permission to documentation (#8689)
+2020-04-30,Calvin Leung Huang,df60e39edc,Update website README
+2020-05-06,Michael Golowka,2ee78a278b,Fix capabilities to show MSSQL static roles aren't supported (#8935)
+2020-05-08,Jeff Mitchell,81afb3fdd0,Update comment in client about canceling the WithTimeout context
+2020-05-12,Mike Jarmy,48822c6c63,Update CHANGELOG.md
+2020-05-14,Jeff Mitchell,d660b45ee4,Update to latest go-kms-wrapping and fix protos/etcd (#8996)
+2020-05-19,ncabatoff,e52f34772a,Don't include username or password of proxy env vars when logging them. (#9022)
+2020-05-21,ncabatoff,cf55129642,changelog++
+2020-05-21,Noelle Daley,aaf7245c34,update deps for security (#9039)
+2020-05-29,ncabatoff,60c7e22ddf,Extend agent template tests to also validate that updated templates get re-rendered. (#9097)
+2020-06-03,Jason O'Donnell,753a093f43,docs/k8s: Add OpenShift K8s beta documentation (#9135)
+2020-06-08,Peter J. Li,4e6ddd2f68,fix error message for when an invalid uri_sans is provided via the api (#8772)
+2020-06-11,Jeff Hemmen,b9f05d0816,Simple typos (#9119)
+2020-06-15,Mark Gritter,0dac9629b8,Changes to expiration manager to walk tokens  (#9182)
+2020-06-18,Michael Golowka,18f73cf35c,Add password_policy field to Azure docs (#9249)
+2020-06-23,Clint,e926896fc7,VLT091 plugin testing framework stepwise (#9270)
+2020-06-25,Theron Voran,836fad05c7,docs: default for the auth-path annotation (#9313)
+2020-06-29,Calvin Leung Huang,e8baa216e4,monitor: watch for seal state during monitor request (#9341)
+2020-07-01,Calvin Leung Huang,9dc6a12594,logical/system: re-introduce ns-awareness in pathInternalUIMountsRead (#9373)
+2020-07-02,Meggie,4c6b644219,Changing changelog headers and update version (#9393)
+2020-07-08,Jim Kalafut,6b812bc771,changelog++
+2020-07-10,Calvin Leung Huang,ae3369788b,changelog++
+2020-07-16,Rodrigo D. L,faf2958cde,Adding a Clone() function to the request hanlder to be used when theres a need to modify the current request before saving it (#9499)
+2020-07-17,Noelle Daley,646babcf45,Update CHANGELOG.md
+2020-07-21,Brian Kassouf,7549070cfa,raft: Fix some snapshot restore issues (#9533)
+2020-07-22,Alexander Bezobchuk,853d358e8c,Merge PR #9089: Initial 1.5.0 Upgrade Doc
+2020-07-27,Scott Miller,5b1b2ff127,Fix navigation for the Sentinel config and clarify module usage (#9588)
+2020-07-29,ncabatoff,3832f9025e,Use the go test cache to reduce circleci test time (#8838)
+2020-08-05,ncabatoff,6e732f1c33,changelog++
+2020-08-10,Tom Proctor,d3f43d6da1,Add docs for OpenLDAP plugin's new AD schema (#9619)
+2020-08-12,Meggie,1bc123a063,Added upgrade guidance on mount -> path filters (#9712)
+2020-08-18,Tom Proctor,4f328cd20a,Couchbase database plugin documentation (#9764)
+2020-08-24,Clint,c874585830,Update CHANGELOG.md
+2020-08-28,Tom Proctor,fd71582572,Remove incorrect couchbase command (#9851)
+2020-09-02,Theron Voran,b85bc26b73,Updating the vault injector connectivity docs (#9783)
+2020-09-08,Jim Kalafut,d182f38040,Update upgrade guides for latest releases (#9908)
+2020-09-14,Michael Golowka,75b2f42ef2,Add DBv5 plugin serving & management functions (#9745)
+2020-09-16,acahn,6bbc09a18e,Update index.mdx (#9950)
+2020-09-21,Vishal Nayak,a44b451dcd,changelog++
+2020-09-23,Tom Proctor,0ec3342d63,Update CHANGELOG.md (#10029)
+2020-09-25,Jim Kalafut,d626f5851c,changelog++
+2020-10-01,Lauren Voswinkel,0ff44e5a3c,Changelog++
+2020-10-07,Scott Miller,6a41edbf89,Add a helper function for safely grabbing a keyEntry by version (#10080)
+2020-10-09,Jason O'Donnell,23bf02792a,changlelog++
+2020-10-15,Peter Souter,3b5c6914d8,Adds note that it requires a PEM-encoded file (#10145)
+2020-10-16,Theron Voran,a62cb79c3b,changelog++
+2020-10-21,Meggie,b62a00b20a,Updating latest version to 1.5.5 on website (#10208)
+2020-10-26,Jeff Mitchell,ea278ba1a3,Add omitempty's to MountEntry and MountConfig (#7154)
+2020-10-28,Jonas-Taha El Sesiy,652fae3e96,Add support for Managed Identity auth for physical/Azure (#10189)
+2020-10-30,Calvin Leung Huang,65a6c4ef49,mod: update database-couchbase to v0.2.1 (#10286)
+2020-11-05,Jimmy Merritello,6819daad78,Bump HSM version (#10327)
+2020-11-10,Angel Garbarino,0340b40575,remove http-requests components and re: files (#10360)
+2020-11-16,Michael Golowka,b4d4137dfe,Clarify JWT in kubernetes auth docs (#10403)
+2020-11-25,Nick Cabatoff,bda5e4b51e,Use a lock to address race. (#10447)
+2020-12-03,Brian Kassouf,15b0bd3729,Telemetry consul transaction (#10486)
+2020-12-11,Michael Golowka,021b1abcaf,Updated changelog for #10477 (#10518)
+2020-12-15,Rodrigo D. L,9934f75f1d,Disclosure of internal IP addresses from unauthenticated request (#10516)
+2020-12-22,Scott Miller,f4db2dddf4,Avoid disclosing IP addresses in unauthenticated requests (#10579)
+2021-01-07,Scott Miller,131123918a,Make the error response to the sys/internal/ui/mounts with no client token consistent (#10650)
+2021-01-15,Jeff Escalante,83bf4a26c8,Docs: prepare for vercel hosting move (#10598)
+2021-01-20,Michael Golowka,3c477d49a7,Add 'Add' and 'Del' functions to LDAP interface (#10692)
+2021-01-26,Calvin Leung Huang,df51db751d,agent: add an inflight cache better concurrent request handling (#10705)
+2021-01-29,Mike Green,ce4c842f33,clarify space limits in bytes (#10811)
+2021-02-08,Mark Gritter,64487d8851,Fill in missing lease ID deterministically. Generate a UUID on creation. (#10855)
+2021-02-11,Tom Proctor,b947278d6c,auth/kubernetes docs: Correct default issuer (#10900)
+2021-02-17,Michael Golowka,2c671147ec,OpenAPI - Don't panic if field isn't found (#10929)
+2021-02-22,Hridoy Roy,5db69c2f85,upgrade consul template (#10973)
+2021-02-25,Nick Cabatoff,ba8ab5083f,InfluxDB has released a 2.x series of docker images, which is breaking our tests.  Use the 1.8 image instead. (#11005)
+2021-02-26,Meggie,21bf8fbdcf,Update latest to 1.6.3 (#11010)
+2021-03-03,Brian Kassouf,7d7104da32,go mod vendor
+2021-03-11,Chelsea Shaw,de45ff6b39,UI: Add null check before getting userRootNamespace from storage (#11094)
+2021-03-17,Nick Cabatoff,a880df97ba,Add a test for server stabilization (#11128)
+2021-03-19,Brian Kassouf,5ff9af3a17,storage/raft: Ensure peers are informed of their correct suffrage when added with AutoPilot (#11155)
+2021-03-24,Nick Cabatoff,144f21c745,Client controlled consistency docs (#10990)
+2021-03-29,Nick Cabatoff,65f1f2cccd,Use a 15s instead of 10s timeout on this test.  The `default` subtest takes 9s on my laptop, so pad that for CI. (#11221)
+2021-04-02,Arnav Palnitkar,2eace988cc,Updated show lease with toggle ttl picker (#11256)
+2021-04-07,Andreas Gruhler,b8c5ee50a2,replace reference to version 1.6.4 with 1.7 (#11223)
+2021-04-14,Jason O'Donnell,f7af25b401,docs: update vault-k8s to 0.10.0 (#11354)
+2021-04-19,Calvin Leung Huang,2ce4f118d2,pki: fix tidy removal on revoked entries (#11367)
+2021-04-21,Nick Cabatoff,575240dd2f,Document unauth pprof and the new pprof endpoints. (#11413)
+2021-04-26,Zachary Shilton,5223d75035,website: update readme (#11421)
+2021-05-03,Vishal Nayak,a251a123d5,Use correct mount accessor when refreshing external group memberships (#11506)
+2021-05-05,Brandon Romano,3c0762dbfb,Update Try Cloud CTAs to go direct to the portal (#11535)
+2021-05-07,Calvin Leung Huang,9651178aff,changelog: add changelog for #11562 (#11564)
+2021-05-12,Josh Black,f1c0a7744f,Provide a new API endpoint for retrieving signed licenses (#11543)
+2021-05-17,Jimmy Merritello,4d3bd9770c,[Website] Add HashiConf info to alert banner (#11640)
+2021-05-21,Jeff Escalante,6d6ea1840a,update downloads page component to fix a bug in ent version filtering (#11686)
+2021-05-27,Scott Miller,652b15d5fe,Clarify the accuracy of estimated encryption counts wrt cluster nodes (#11561)
+2021-06-02,Lars Lehtonen,8d515fec2b,command: deprecate errwrap.Wrapf() (#11744)
+2021-06-04,Josh Black,f2dd7fe9a7,OSS parts of sighup license reload (#11767)
+2021-06-08,Kendall Strautman,ba3f54f3d2,chore: updates alert banner data (#11741)
+2021-06-10,Jason O'Donnell,6942098134,plugins/cassandra: add tls_server_name (#11820)
+2021-06-11,Jason O'Donnell,eb138b9873,docs: add permissions required for cassandra (#11844)
+2021-06-16,Lars Lehtonen,53b17da1a1,vault: fix dropped identity store test errors (#11867)
+2021-06-18,MilenaHC,0d491c621f,add changelog to influxdb (#11896)
+2021-06-23,Austin Gebauer,834adbf975,docs: corrects json and issuer for identity tokens (#11924)
+2021-06-25,Theron Voran,e49f1f039b,Adding changelog for #11502 (#11944)
+2021-07-06,Jason O'Donnell,ed57be8d70,docs: fix link rendering for Oracle (#11994)
+2021-07-08,Vishal Nayak,31775b63ca,OSS parts of Autopilot in DR secondaries (#12014)
+2021-07-12,Scott Miller,136dd73cb7,Wire up remaining sections for config validation (#12048)
+2021-07-14,hghaf099,3a92d774db,Add namespace in error (#12061)
+2021-07-15,Jeff Mitchell,861454e0ed,Migrate to sdk/internalshared libs in go-secure-stdlib (#12090)
+2021-07-20,Jeff Mitchell,4b96eaf53f,Swap out stepwise for external repo version (#12089)
+2021-07-23,Bryce Kalow,3f155b4dba,website: fix release notes link (#12145)
+2021-07-28,Jim Kalafut,8602bcdc59,Add website redirect to fix faqs -> faq issue (#12195)
+2021-07-30,Mike Green,08a02a4559,add visible note about being enterprise (#12216)
+2021-08-04,Loann Le,014de6d654,replaced changelog link (#12259)
+2021-08-16,Lars Lehtonen,088922ac99,vault: fix dropped test errors (#12242)
+2021-08-19,Nick Cabatoff,9b578c529a,Add docs for metrics from #11472. (#12278)
+2021-08-23,hghaf099,573e2d77da,Lease count quotas does not apply to root tokens (#12405)
+2021-08-27,Meggie,23a7255239,Upgrade note for Alpine 3.14 docker images (#12450)
+2021-09-02,Yoko Hyakuna,6da086843b,Fix isues 12397 (#12484)
+2021-09-08,John-Michael Faircloth,8f0a72e212,identity: enforce key param and key existence on role creation (#12208)
+2021-09-10,hghaf099,51957e1538,Fixing a flaky test TestQuotas_RateLimitQuota_ExemptPaths (#12532)
+2021-09-16,Arnav Palnitkar,681a931df4,Client count updates (#12554)
+2021-09-22,Arnav Palnitkar,36bcf8e141,Added namespace search to client count (#12577)
+2021-09-27,claire bontempo,f29d612ea8,UI/bar chart updates (#12622)
+2021-09-29,Brian Kassouf,d58b9c36e1,Update protobuf & grpc libraries and protoc plugins (#12679)
+2021-10-04,claire bontempo,1a1c1cbe7b,UI/ PKI UI Redesign (#12541)
+2021-10-07,Scott Miller,3dab9d2320,Add a TRACE log with TLS connection details on replication connections (#12754)
+2021-10-12,Mike Green,7095d0507d,Clarify max TTL and system max TTL behavior (#12391)
+2021-10-13,Chelsea Shaw,9c6bd51754,UI/OIDC provider (#12800)
+2021-10-15,Angel Garbarino,a3874a6f74,Flaky test (#12832)
+2021-10-19,Loann Le,2605d96d79,Vault documentation: created new identity concepts page (#12825)
+2021-10-21,claire bontempo,e8e1344839,UI/Remove spinner after token renew (#12887)
+2021-10-22,Ben Ash,375a7a6753,fix: upgrade vault-plugin-auth-kubernetes to v0.11.2 (#12913)
+2021-10-27,Tom Proctor,14cffc38bb,agent/cache: Store leases in-order in persistent cache so that restore respects dependencies (#12843)
+2021-10-28,Arnav Palnitkar,1426491409,Added date range to client count csv filename (#12960)
+2021-11-01,Pratyoy Mukhopadhyay,915414d32b,Add docs update for counter forwarding to oss (#12998)
+2021-11-04,Angel Garbarino,063d19aa9a,fix and test fix (#13050)
+2021-11-08,Rémi Lapeyre,50adc3c0cf,Add read support to sys/mounts/:path (#12792)
+2021-11-10,Chelsea Shaw,90decc1405,UI/OIDC authz flow tests (#13106)
+2021-11-15,Yoko Hyakuna,c6cf9b5829,Fix out-dated hyperlink (#13145)
+2021-11-17,Joseph Crosland,580b8bc5c9,Return a UserError if aead.Open() fails to align with documentation (#10914)
+2021-11-19,Loann Le,610bd6948a,Updates to 1.9 documentation (#13228)
+2021-11-23,swayne275,f5dded7347,enhance test metrics (#13262)
+2021-11-29,Jason O'Donnell,adebe3e723,sdk/queue: move lock before checking queue length (#13146)
+2021-12-02,Loann Le,a06ac651c3,Vault documentation: updated client count FAQ document (#13330)
+2021-12-08,Tom Proctor,cb8fdcf26b,Docs to clarify k8s auth options with short-lived tokens (#13275)
+2021-12-10,Meggie,8b6cf6f3b4,changelog++
+2021-12-15,Alex Carpenter,5d506a35d8,Homepage redesign (#13159)
+2021-12-18,Tom,e0c79e367d,adjustemnt of options order (#12804)
+2021-12-21,Austin Gebauer,356e384a01,auth/oidc: update plugin to v0.11.4 (#13492)
+2022-01-03,Loann Le,dcab922cba,Vault documentation: fixed broken links (#13553)
+2022-01-10,Robert,bc76edbeca,secrets/database: Add parameter to disable escaping username and password chars for DB connections (#13414)
+2022-01-13,akshya96,b5d7b33d00,updating response for partial month client count (#13634)
+2022-01-19,Nick Cabatoff,4970b33757,Support go-sockaddr templates in top-level cluster_addr config (#13678)
+2022-01-24,Matthew Irish,ce90960c13,Correct doc link for namespaces in API Explorer (#13747)
+2022-01-26,Noel Quiles,b204fdd49e,Add tag to consent manager (#13768)
+2022-01-28,Steven Clark,acf91ac29b,Documentation updates for new keys for PKCS#11 unsealing (#13814)
+2022-02-03,hghaf099,c61d0d204c,adding docs for the framework Required field (#13884)
+2022-02-04,Victor Rodriguez,fb893ec97c,Run 'make fmt'. (#13914)
+2022-02-08,VAL,23f601b508,Correct return value explanation in docstring (#13931)
+2022-02-09,Robert,ba16684d03,secret/consul: Add support for consul namespaces and admin partitions (#13850)
+2022-02-14,Loann Le,e9ceffa90d,Vault documentation: added new warning to listener stanza parameters (#14036)
+2022-02-15,Matt Schultz,d78895fcef,Return integral seconds for transit auto_rotate_interval instead of a time string. (#14078)
+2022-02-17,Jordan Reimer,5f17953b59,MFA (#14049)
+2022-02-18,swayne275,ead5972952,Cleanup bool checks (#14102)
+2022-02-21,Victor Rodriguez,117682bf80,Invalidate the ManagedKeyRegistry cache when Vault config is updated. (#14179)
+2022-02-23,Robert,dd6516933e,Clarify service_registration stanza version (#14213)
+2022-02-24,Lars Lehtonen,1a7ed104b8,builtin/logical/transit: fix dropped test error (#14244)
+2022-02-25,Alexander Scheel,9a4ac84fcd,Sync PKI API and FrameworkField descriptions (#14286)
+2022-03-01,Sean Ellefson,d4342a3124,Correcting API documentation to show status endpoints are unauthenticated (#13943)
+2022-03-04,Josh Black,2cbce54869,Only create new batch tokens if we're on at least 1.10.0 (#14370)
+2022-03-09,Austin Gebauer,98692e19c9,identity/oidc: prevent key rotation on performance secondary clusters (#14426)
+2022-03-14,Alexander Scheel,f983879992,Fix description of StringSliceVar options (#14439)
+2022-03-16,Benjamin Chrobot,dd91b9a719,docs: add missing k8s verb (#12374)
+2022-03-18,Victor Rodriguez,02c3ec92bb,Use FieldData.GetOkError() to access required Transit parameters. (#14593)
+2022-03-22,Jordan Reimer,b8062bdcae,Route renderTemplate Deprecation (#14646)
+2022-03-24,Loann Le,f9863f8fff,incorporated feedback (#14692)
+2022-03-29,claire bontempo,f2a2b8bd38,remove [at] from date formatter (#14748)
+2022-03-31,Jordan Reimer,5f4e89084b,Replace RadioButton With Internal Component (#14809)
+2022-04-04,Alexander Scheel,7d92a63ab0,Fix handling of default zero SignatureBits value with Any key type in PKI Secrets Engine (#14875)
+2022-04-07,Jordan Reimer,df30e058cd,OIDC Login Bug (#14916)
+2022-04-12,Angel Garbarino,0b26b1a605,Ember upgrade to 3.28.6 (#14763)
+2022-04-14,Angel Garbarino,c9ce3fd83d,Custom tooltip for Generated Token Policies form field on auth methods (#15046)
+2022-04-19,Hamid Ghaf,59d9bfa5c0,deprecating Legacy MFA (#14869)
+2022-04-22,Reuben James,e580dfd4b8,Update golang.org/x/crypto/ssh (#15125)
+2022-04-27,Rémi Lapeyre,a918e5ed5c,Remove dead code in setupCredentials() (#15194)
+2022-05-03,Alexander Tischenko,6c8da2b6a5,When running under systemd, send ready when server completed reloading config #7028 (#15041)
+2022-05-06,davidadeleon,254d8da255,Add DR Metric scraping capability to debug command (#15316)
+2022-05-11,Alexander Scheel,b42cdf3040,Allow Multiple Issuers in PKI Secret Engine Mounts - PKI Pod (#15277)
+2022-05-12,VAL,6a6d6c705b,Fix changelog formatting for feature (#15386)
+2022-05-13,Tony Wittinger,1fc1736c9e,docs: updated monitor doc (#15358)
+2022-05-16,Austin Gebauer,b064d5ffb5,auth/oidc: documents user claim constraint for optional google workspace config (#15456)
+2022-05-17,Alexander Scheel,53b66b26ec,Start documentation for FIPS variants of Vault Enterprise (#15475)
+2022-05-18,Robert,c1fc8530d6,Fix small typos, update docs terminology (#15504)
+2022-05-20,Alexander Scheel,68e8795392,Clarify KU/EKU parameters on sign-verbatim (#15535)
+2022-05-23,Gabriel Santos,9083bd2b5d,Convert not_before_duration to seconds before returning it (#15559)
+2022-05-25,Tom Proctor,a85e7e956f,Add API docs for Kubernetes secrets engine (#15564)
+2022-05-25,John-Michael Faircloth,1e2f3b92fb,fix: upgrade vault-plugin-database-couchbase to v0.7.0 (#15606)
+2022-05-26,Arnav Palnitkar,c05b433de3,Update to ttl component (#15648)
+2022-05-31,Steven Clark,91167e2d07,Add integration tests for aliased PKI paths (root/rotate, root/replace) (#15703)
+2022-06-02,Alexander Scheel,5812d9a515,More PKI docs updates (#15757)
+2022-06-03,Violet Hynes,fbb707c513,VAULT-6371 Fix issue with lease quotas on read requests that generate leases (#15735)
+2022-06-06,modrake,395356af8a,add codeowners to protect release dirs (#15711)
+2022-06-08,Victor Rodriguez,c9ff68f2b0,Update KMIP documentation to reflect Vault 1.11 changes. (#15868)
+2022-06-09,Austin Gebauer,8bf6a5952a,docs/postgres: replaces lib/pq with pgx (#15901)
+2022-06-13,Violet Hynes,d58583f7ad,VAULT-6091 Document Duration Format String (#15920)
+2022-06-15,Austin Gebauer,c6173f64bf,auth/gcp: adds note on custom endpoints to configuration section (#15990)
+2022-06-17,Steven Clark,3289e66b73,Match up dependency versions across OSS and ENT. (#15820)
+2022-06-21,Jason O'Donnell,d9306e14de,Fix changelog for 15986 (#16085)
+2022-06-23,Austin Gebauer,af52d67dc1,secrets/k8s: fix api docs for generated_role_rules json (#16127)
+2022-06-27,Alexander Scheel,229f562087,Add warning on missing tidy targets (#16164)
+2022-07-05,Loann Le,c30e2cb2e1,vault documentation: updated examples to use volumes (#16175)
+2022-07-12,Alexander Scheel,bae0f15548,Back out panic message, add new warning to FIPS docs (#16243)
+2022-07-19,Tom Proctor,c67e009e81,Docs: Add release notes for MSSQL TDE (#16326)
+2022-07-21,Wojtek Czekalski,c194402b11,Fix typo in the docs (#16323)
+2022-07-25,tdsacilowski,dac99be29d,Agent JWT auto auth `remove_jwt_after_reading` config option (#11969)
+2022-07-28,Christopher Swenson,829d5229d8,Remove SHA1 for certs in prep for Go 1.18 (#16455)
+2022-08-02,Violet Hynes,73c899b295,VAULT-7065 move lease-quota updating to process restore (#16422)
+2022-08-03,FalcoSuessgott,475a88e813,Add vkv to related tools list (#16285)
+2022-08-08,claire labry,7d0f0b2a3a,introduces the post publish website event (#16328)
+2022-08-10,Violet Hynes,75d154c26c,VAULT-6818 Docs for entity merge functionality (#16593)
+2022-08-15,Alexander Scheel,23ad52fd2e,Add BYOC-based revocation to PKI secrets engine (#16564)
+2022-08-16,Hridoy Roy,687b3d1c7f,oss port of vault-7225-bugfix (#16745)
+2022-08-21,Yoko Hyakuna,b4bfb2b15e,included jwt_claim expiration error message (#16804)
+2022-08-23,Alexander Scheel,986e43b7f2,Finish refactor to remove global crlLifetime (#16835)
+2022-08-25,Tom Proctor,247a019be0,Pin MongoDB test container images pre-v6 (#16880)
+2022-08-26,Alexander Scheel,6e6914547e,Let PKI tidy associate revoked certs with their issuers (#16871)
+2022-08-30,Angel Garbarino,9c586b6a31,Glimmerize ListView Component for future PKI work (#16940)
+2022-08-31,Meggie,9ec6d8a308,changelog++
+2022-09-02,Tom Proctor,abf35c3480,Docs: Add log level environment variable for Vault Lambda Extension (#17000)
+2022-09-07,Tom Proctor,f2295602ac,CI: Delete duplicate vaulttest docker networks to improve reliability (#16993)
+2022-09-09,Steven Clark,b7f4b6d6ad,Update PKI documentation to clear up PKCS8 marshalling behavior (#17080)
+2022-09-13,Jordan Reimer,2361265929,Replace Non-Inclusive Terms in UI (#17116)
+2022-09-15,Kit Haines,6c9db68844,Add "plumbing" for surfacing warnings, and warning overwriting ttl (#17073)
+2022-09-16,Robert,af3b73c3a6,auth/kerberos: update plugin to v0.8.0 (#17173)
+2022-09-19,Tom Proctor,16189ca379,Upgrade vault-plugin-auth-azure to v0.12.0 (#17194)
+2022-09-20,Steven Clark,a156f4e4a6,update vault auth submodules to api/v1.8.0 (#17228)
+2022-09-21,Kit Haines,e94c34d7b6,Try to bring versions of gofumpt to be the same (so running make bootstrap doesn't change version of gofumpt needed for make fmt) (#17254)
+2022-09-22,Tom Proctor,21d13633d7,CLI: Tune plugin version for auth/secret mounts (#17277)
+2022-09-27,Tom Proctor,826b20c1da,Plugin versioning changelog entries (#17322)
+2022-09-30,Peter Wilson,06c0c6c882,Added flag and env var which will disable client redirection (#17352)
+2022-10-04,Angel Garbarino,9493c161f7,Bug Fix for Kymgmt keyType on default (#17407)
+2022-10-06,Alexander Scheel,665b8e31b7,Better docs on PKI key stuff (#17443)
+2022-10-10,Anton Averchenkov,22ca00165d,Remove Async-HVAC from recommended libraries list (#17480)
+2022-10-13,Alexander Scheel,3a40a8d961,Add note about transit BYOK key formats (#17529)
+2022-10-18,Bernd Straehle,46aadd474f,Rename "Google Apigee" to "Apigee" (#17561)
+2022-10-19,Scott Miller,777474050b,Intercept key_id from generic configmap and turn it into a wrapperv2 option (#17612)
+2022-10-26,Johan Brandhorst-Satzkorn,172e0efcce,Fix rendering of custom response headers (#17652)
+2022-10-28,aphorise,c56b198161,Docs: API secret/ssh clarity on Create & Update (#17033)
+2022-11-02,Violet Hynes,2ae9835bbc,VAULT-8518 Increase HMAC limit to 4096, and limit approle names to the same limit (#17768)
+2022-11-04,Theron Voran,e2ddfe07ee,docs/vault-k8s: update env example (#17818)
+2022-11-10,Ron DeMena,6e1224a33c,Update interoperability-matrix.mdx (#17882)
+2022-11-11,AnPucel,3b59ff0bb9,Make request objects required (#17909)
+2022-11-16,Brian Kassouf,283ef77263,Barrier: Fix potential locking issue (#17944)
+2022-11-17,Steven Clark,b3514eb22f,certutil.ParseHexFormatted fails parsing 80 hex and above (#18018)
+2022-11-18,mcollao-hc,62dbb40568,pin security-scanner workflow (#18048)
+2022-11-23,Steven Clark,f3ee1d2cc2,Update main to Go 1.19.3 (#18089)
+2022-11-29,Chelsea Shaw,5a9786fc6c,UI: Use typescript linter and parser (#18112)
+2022-12-01,Tom Proctor,d6ed362cc3,Fix plugin list API when audit logging enabled (#18173)
+2022-12-05,Alexander Scheel,601e27dcca,Respond with data to all writes in PKI engine (#18222)
+2022-12-07,Roberto Pommella Alegro,b2354e5aed,Docs: improve bound_audiences documentation for jwt role (#18265)
+2022-12-09,Chris Capurso,eea22cbee7,remove deleted link proto paths (#18296)
+2022-12-13,Mike Palmiotto,57017b626e,command/audit: Recommend multiple audit devices (#18348)
+2022-12-15,Scott Miller,13f3c2ffa3,Capture cryptosec responsibilities in CODEOWNERS (#18338)
+2022-12-16,Josh Black,b8de2c2b4e,De-duplicate namespaces when historical and current month data are mixed (#18452)
+2022-12-22,Christopher Swenson,5c7aadd2cb,Update XKS docs to use AWS CLI (#18536)
+2023-01-04,claire bontempo,a83a20104b,ui: add input as event for text form field (#18563)
+2023-01-09,Violet Hynes,4b8bd15e28,VAULT-12491 Add docs for group policy config (#18616)
+2023-01-11,Austin Gebauer,5564be70ea,docs/plugin: adds note on leases and tokens during upgrades (#18669)
+2023-01-13,Ben Ash,ed244a9263,auth/kubernetes: upgrade to v0.14.1 (#18711)
+2023-01-17,akshya96,ec96f55905,Prevent Brute Forcing: Create an api endpoint to list locked users OSS changes (#18675)
+2023-01-18,Jaymala,88658f2c28,Rename reusable enos-run workflow file (#18757)
+2023-01-23,Alexander Scheel,fa7c021db9,More cross cluster queue tweaks (#18789)
+2023-01-24,Hamid Ghaf,46b9921aae,Allow Token Create Requests To Be Replicated (#18689)
+2023-01-25,claire bontempo,33ccb0b4af,UI: pki cross-sign component tests (#18847)
+2023-01-27,Alexander Scheel,4672f94ce1,Move cert auth backend setup into initialize (#18885)
+2023-01-31,Nick Cabatoff,efa8c22f17,TestClusterCore's TLSConfig becomes a method and does a Clone. (#18914)
+2023-02-01,Violet Hynes,68dbb925b7,VAULT-13056 fix leasecache usage, add test coverage (#18922)
+2023-02-04,Rowan Smith,cdff366f7f,docs allow_forwarding_via_token syntax update (#18956)
+2023-02-06,Kianna,e825dda8ca,VAULT-13192 only validate form on submit instead of onChange (#19004)
+2023-02-07,Alexander Scheel,589cf19e4d,Add suggested root rotation procedure (#19033)
+2023-02-08,Steven Clark,7058107b4e,Add OCSP GET known issue (#19066)
+2023-02-09,Michael Anthony,dd9a3e05ae,Move env var declaration to called workflow (#19085)
+2023-02-09,Austin Gebauer,23598121e6,upgrade vault-plugin-database-redis to v0.2.0 (#19112)
+2023-02-10,Kit Haines,d08de3e78e,Vault 11799 Vault CLI Re-Issue (Templating based on existing certificate) (#18499)
+2023-02-14,Alexander Scheel,d584e25c65,Add cryptosec as codeowners to relevant docs (#19070)
+2023-02-15,AnPucel,8651d6de38,PKI Response Structures Part 2 (#18479)
+2023-02-16,John-Michael Faircloth,b08ecd76fa,docs/upgrade guide: add changes to plugin loading (#19231)
+2023-02-21,Raymond Ho,77e80a8030,use github token env var if present when fetching org id (#19244)
+2023-02-23,Jason O'Donnell,f2a47b0e40,Fix inmem layer unlock bug (#19323)
+2023-02-28,Anton Averchenkov,bcc1d5d86d,Remove 'openldap' from gen_openapi.sh (#19401)
+2023-03-06,miagilepner,9f7f8d5bfa,VAULT-13729 activity log test godocs (#19433)
+2023-03-10,Meggie,5d20d598c3,Un-hiding link to 1.13 upgrade guide (#19505)
+2023-03-15,Ryan Cragun,122e958acb,ci: pin terraform until planning bug is resolved (#19560)
+2023-03-20,Alexander Scheel,89ff5f4844,More wrapped errors - PKI, SSH, Transit  (#19631)
+2023-03-22,Karel,5631e806c2,Fix: Optionally reload x509 key-pair from disk on agent auto-auth (#19002)
+2023-03-23,Mason Foster,cfff8d420e,aws: pass cancelable context with aws calls (#19365)
+2023-03-27,akshya96,6a429bb0d6,Github Action to check deprecations in PR (#19666)
+2023-03-29,Steven Clark,ddb5db1538,Initial ACME new-nonce API (#19822)
+2023-03-30,Milena Zlaticanin,abe14e72de,secrets/mongodbatlas: upgrade dependencies (#19861)
+2023-03-31,claire bontempo,0496c6107b,UI: pki rotate root cert (#19739)
+2023-04-04,Peter Wilson,a19322d575,Moved 'WaitForNodesExcludingSelectedStandbys' to shared testhelpers file (#19976)
+2023-04-06,Chip Stepowski,ef901b1bc4,Update Create Role heading to Create/Update Role (#20000)
+2023-04-07,Christopher Swenson,d697b08502,Update docs for Helm 0.24.0 release (#20049)
+2023-04-11,Jaymala,ae6f61dfeb,Use absolute path for debug datadir (#20069)
+2023-04-12,Kianna,9011832458,UI: VAULT-14972 VAULT-13808 VAULT-12777 Remove pki beta, old pki, remove unused cert attributes (#20062)
+2023-04-13,Anton Averchenkov,bd182716db,openapi: Add display attributes for /sys (p1) (#19706)
+2023-04-17,Alexander Scheel,17a2827894,Add fix for Go x/crypto/ocsp failure case (#20181)
+2023-04-18,Yoko Hyakuna,1ed642d126,[Docs] Mark the 'policies' parameter as deprecated for tokens (#20238)
+2023-04-21,Jaymala,166f270613,[QT-517] Skip builds for docs PRs (#20036)
+2023-04-24,Nick Cabatoff,3eefdeae84,Add guidelines for agent/server version compatibility (#20312)
+2023-04-25,Nick Cabatoff,445e2e91c6,Docker testing: handle licensing, different images per node (#20347)
+2023-04-27,Angel Garbarino,c8f593a3eb,Remove the Bulma CSS Framework (#19878)
+2023-05-01,Alexander Scheel,89e5808711,Update to tidy status and docs (#20442)
+2023-05-03,Steven Clark,14cad3cae3,In ACME responses only return Type, Value fields (#20480)
+2023-05-04,Victor Rodriguez,2d7efaef97,Convert seal.Access struct into a interface (OSS) (#20510)
+2023-05-15,Daniel Huckins,d899c57125,move private function to internal pkg for sharing (#20531)
+2023-05-17,Alexander Scheel,d234111801,Start counting ACME certificate issuance as client activity (#20520)
+2023-05-19,Equus quagga,7f4874fa09,Added a note to remove-peer (#20583)
+2023-05-22,Mike Palmiotto,810d504e4f,Add current_billing_period activity endpoint param (#20694)
+2023-05-24,miagilepner,541f18eeb7,VAULT-14735: repeated and segmented activity log clients (#20699)
+2023-05-24,Angel Garbarino,735e2866db,Address Test-ui suite failure for package install issues (#20756)
+2023-05-25,Robert,3f226edfc8,database/elasticsearch: upgrade plugin version (#20767)
+2023-05-26,Thy Ton,0c7a3c0300,update API docs for kubernetes secrets engine (#20726)
+2023-05-30,Anton Averchenkov,7f2d3f2c5c,fix exitCh race condition (#20817)
+2023-05-31,Anton Averchenkov,8ff31f32a5,agent: Don't print errors on exit 0 in supervisor mode (#20880)
+2023-06-01,claire bontempo,c2a1ce374c,UI: pki only render unable to parse banner on issuer details page (#20942)
+2023-06-05,Nick Cabatoff,da5d0ca498,Fix race with dead server cleanup when adding new raft nodes (#20986)
+2023-06-07,Bianca Moreira,aca58d81a1,Add new policy metrics (#21010)
+2023-06-09,Josh Black,0ff9059967,OSS changes for fixing bug in update-primary (#21119)
+2023-06-13,Theron Voran,a3657dc604,docs/pki: add remove_roots_from_chain option to /pki/issue (#21161)
+2023-06-15,Nick Cabatoff,c5549cdac6,Call runFilteredPathsEvaluation from within mountInternal/enableCredentialInternal (#21260)
+2023-06-19,Andy Assareh,6ebb61cc35,correct spelling error - Compatability to Compatibility (#21333)
+2023-06-21,Rachel Culpepper,254d8f8356,Vault-11623: OSS changes for seal config and env vars (#21116)
+2023-06-23,Max Bowsher,5ebda5d8f4,Add a new log message, reporting collisions between OpenAPI paths (#20873)
+2023-06-28,Angel Garbarino,1a780d8380,Capitlization Policy: First word only for `title is-5` (#21501)
+2023-07-04,miagilepner,eecae3a827,VAULT-17586: Add concurency to ci and build workflows (#21550)
+2023-07-06,miagilepner,8c18f24b9d,VAULT-17734, VAULT-17735: Combine linters (#21611)
+2023-07-07,Kuba Wieczorek,5defa54bd4,VAULT-17592 Extract failed Go test results across runners (#21625)
+2023-07-11,Sarah Chavis,ee4424fa3a,Add note about user lockout defaults (#21744)
+2023-07-12,Kuba Wieczorek,216f497c33,Don't fail tests if GitHub API doesn't return the expected response in CI (#21791)
+2023-07-14,Alexander Scheel,8c7e5d7a3a,Mark config dirty if read differs from state (#21835)
+2023-07-17,Alexander Scheel,4ec5e22ade,Fix ACME tidy to not reference acmeContext (#21870)
+2023-07-20,Conor McCullough,e969e4ae43,Update libraries.mdx (#21846)
+2023-07-21,Max Bowsher,fe013a987a,Add missing `Query: true` metadata to API definitions (#21949)
+2023-07-25,Steven Clark,068da27a2d,Use hclog instead of t.Logf within PKI ACME test suite (#22049)
+2023-07-27,Ellie,3acfa450c2,docs/mssql: add admin privileges needed (#22096)
+2023-08-02,Luis (LT) Carbonell,b8be31be9b,Split Changelog into Smaller Files (#22141)
+2023-08-07,Steven Clark,a1d0be3241,Send leaf_not_after_behavior as string not an integer - OSS (#22223)
+2023-08-09,Alexander Scheel,d4e402d597,Docs CIEPS Configuration (#22259)
+2023-08-11,Nick Cabatoff,8c4f3f1c71,Share the same mssql container across all four subtests. (#22293)
+2023-08-15,Ellie,a5b3b3d6b5,secrets/ldap: upgrade to v0.11.1 for bug fix (#22330)
+2023-08-17,Ben Moskovitz,cbc9b66620,Update JWT docs to not recommend `-path` for `vault write` (#18305)
+2023-08-17,Adrian Todorov,b49d668e6a,Clarify Tokens use and structure recommendation (#21569)
+2023-08-17,Brian Shumate,614f50de66,Docs: AppRole API docs updates (#19162)
+2023-08-21,Josh Black,d50bd4eb05,OSS changes for https://github.com/hashicorp/vault-enterprise/pull/4254 (#22482)
+2023-08-23,malinac02,9b0540dfbe,clean up code by removing test selector (#22520)
+2023-08-25,Milena Zlaticanin,2d0d5c79ed,Add the ability to set seconds in cron schedule for testing purposes (#22531)
+2023-08-28,Austin Gebauer,e941d444a9,Adds stubbed InitializeFunc to the system backend (#22588)
+2023-08-30,Chelsea Shaw,b18313b4eb,UI: kv-v2 version history & path tests (#22593)
+2023-08-30,Kianna,fc9e308f02,UI: Cleanup dashboard (#22574)
+2023-08-31,John-Michael Faircloth,16f805419f,fix rotation_window bug in error path (#22699)
+2023-09-01,Tom Proctor,07e76196ba,Support running plugins in isolated containers (#22712)
+2023-09-05,hc-github-team-secure-vault-core,824a8a5901,Update hashicorp/vault-plugin-auth-oci to v0.14.1 (#22774)
+2023-09-06,Jordan Reimer,068a57c204,Form Field Tooltip Alignment (#22832)
+2023-09-07,John-Michael Faircloth,1870018090,docs: db schedule-based static role rotations (#22863)
+2023-09-08,Theron Voran,69fda8da76,plugins: adding vault and plugin metadata labels to plugin containers (#22859)
+2023-09-11,Peter Wilson,ae774b93d3,VAULT-18160: Audit - options and defaults (#22295)
+2023-09-12,claire bontempo,112501a3f6,ui: More transit flakiness (#22969)
+2023-09-13,hc-github-team-secure-vault-core,3116e2ecab,Update hashicorp/vault-plugin-auth-azure to v0.16.2 (#23060)
+2023-09-15,Chelsea Shaw,e17a14d6b0,UI: Correctly handle error from errorResponseWithStatusCode helper (#23102)
+2023-09-19,Chelsea Shaw,cb5084b9e8,UI: cleanup unload model logic (#23154)
+2023-09-21,mickael-hc,758de878d6,Update Docker base image to Alpine 3.18 (#23217)
+2023-09-22,vinay-gopalan,8924f9592d,Remove SA Credentials from DB Connection Details on Read (#23256)
+2023-09-27,Ryan Cragun,7725117846,enos: remove old initial version from upgrades (#23323)
+2023-09-28,Steven Clark,1188335f6c,Bump versions within transit managed key known issues (#23375)
+2023-10-03,Kuba Wieczorek,3acfe5ea52,[VAULT-20630] CI: Use 'ref' (not 'base_ref') as a default git reference to check out code in the test-go GHA workflow (#23458)
+2023-10-05,Peter Wilson,b4d221536a,bump go-eventlogger to v0.2.5 (#23526)
+2023-10-09,Scott Miller,42a484c6ce,Correct the post-unseal meaning of the seal status type (#23022)
+2023-10-11,Mark Collao,44043004d1,Update security-scan.yml
+2023-10-13,Angel Garbarino,27170b662d,Replace KV v2 List route with wildcard instead of dynamic segment (#23620)
+2023-10-17,Kianna,7a93c8fd66,UI: [VAULT-20186] decode uri for all attributes in the table (#23695)
+2023-10-18,Brian Scholer,a0a150b7f1,Update step-down.mdx to describe behavior against non-active nodes (#23657)
+2023-10-20,John-Michael Faircloth,2e85fdebbe,plugins: allow all log levels for external plugins (#23771)
+2023-10-25,Cinthia Conti,7b1fa4fa15,Update LICENSE to 1.15.1 (#23816)
+2023-10-26,Ryan Cragun,a46def288f,[QT-616] Add `seal_ha` enos scenario (#23812)
+2023-10-31,Nick Downs,b9b72ec321,Fix undelete for mount paths that are deeper than one level (#19811)
+2023-11-03,Yoko Hyakuna,d93a13a7e3,[On-Hold] Update the GH Action URL (#23290)
+2023-11-07,Mike Palmiotto,d5e84cf4a3,docs: Known issue for unchanged sublogger levels on reload (#24048)
+2023-11-10,Max Coulombe,af46b954f6,Document secrets sync LIST request modifications (#23975)
+2023-11-15,Violet Hynes,15ee7dd6c8,Update error message when merging entity fails due to alias deletion failure (#24125)
+2023-11-20,Steven Clark,53040690a2,PKI: Do not set NextUpdate OCSP field when ocsp_expiry is 0 (#24192)
+2023-11-27,Christopher Swenson,904c08e1e4,Remove runtime patch for SHA1 support in X.509 certs (#24243)
+2023-11-28,Violet Hynes,2dd3ab9da0,Correct required policy in static secret caching docs (#24282)
+2023-12-01,Raymond Ho,73f46fca3e,optimize NewTestCluster (#24300)
+2023-12-04,Ben Ash,9e063f31d7,Update VSO docs for v0.4.1 (#24356)
+2023-12-07,Austin Gebauer,766d5ed5f0,docs: adds saml to client count entity table (#24414)
+2023-12-08,Jordan Reimer,3684e898c5,removes ui_copywrite from pre-commit hook (#24448)
+2023-12-12,Rachel Culpepper,9eca3ebde1,Vault-21960: Add docker tests for reloading seal configuration on SIGHUP (#24312)
+2023-12-13,Chelsea Shaw,144ccd686b,UI: Show correct nav items when in chroot namespace (#24492)
+2023-12-19,Peter Wilson,d69a308098,refactor audit broker (#24587)
+2024-01-02,hc-github-team-es-release-engineering,366db10cf2,[DO NOT MERGE UNTIL EOY] update year in LICENSE and copywrite files (#24368)
+2024-01-04,Christopher Swenson,52d9d43a1c,Refactor auto-auth backoff to helper package. (#24668)
+2024-01-08,Tom Proctor,6e537bb376,Support reloading database plugins across multiple mounts (#24512)
+2024-01-09,Cinthia Conti,3bc4520204,Docs update with known issue (#23887)
+2024-01-10,claire bontempo,2cabfe0143,Secrets Sync UI: Add purge delete progress and error banner to destination header (#24761)
+2024-01-12,Steven Clark,a6058c7b7b,Copy the Connection reference within LogInput Clone() (#24843)
+2024-01-16,Peter Wilson,a928c372b8,Audit: `LogInput.Request` Cloning update (#24885)
+2024-01-18,dependabot[bot],0ca49161f9,Bump actions/setup-python from 4.6.1 to 5.0.0 (#24928)
+2024-01-22,hc-github-team-secure-vault-core,16ae214f71,Update hashicorp/vault-plugin-auth-jwt to v0.19.0 (#24972)
+2024-01-23,Kianna,b85365e980,UI: [VAULT-19096] Customizable banners (#23945)
+2024-01-25,Chelsea Shaw,fa54dd8c32,UI: Bump Node to v18 (#25074)
+2024-01-26,akshya96,3b357e2314,manual reporting cli oss changes (#25109)
+2024-01-31,Luciano Di Lalla,9308fa1cb3,Update CHANGELOG.md for 1.15.5, 1.14.9, 1.13.13 (#25148)
+2024-02-02,aphorise,6d59868fb8,Docs: Tranform secrets encode parameter: `expiration` added. (#25168)
+2024-02-05,hc-github-team-secure-vault-core,54f64631c7,Update vault-plugin-secrets-gcp to v0.18.0 (#25173)
+2024-02-06,Austin Gebauer,98bffbe069,identity: adds generation of plugin identity tokens (#25219)
+2024-02-07,Raymond Ho,d07e120557,bump tags on VLE docs, include ap-south-2 (#25271)
+2024-02-08,Kit Haines,9536129091,Fix test to be less flacky (#25243)
+2024-02-12,Angel Garbarino,e5a1555a6f,seal changes (#25254)
+2024-02-14,Ellie,c92a58bb74,fix changelog formatting for vault snapshot inspector feature (#25401)
+2024-02-15,Meggie,221cb24cdd,Clarify when external group membership is updated (#25455)
+2024-02-20,Austin Gebauer,6d4f5df69c,auth/jwt: adds documentation for multi-jwks config parameter (#25503)
+2024-02-21,Christopher Swenson,d3b853385d,Events: no longer in beta (#25562)
+2024-02-22,Mike Palmiotto,895ae9afc0,fix 1.16 upgrade guide (#25593)
+2024-02-26,Chelsea Shaw,ba972dadd6,UI: Remove popup-menu component (#25613)
+2024-02-27,Austin Gebauer,df57ff46ff,Add stubs for plugin WIF (#25657)
+2024-02-29,Chelsea Shaw,7a3f3ba4da,UI: Update mirage (#25698)
+2024-03-04,Jordan Reimer,087efc9993,Sync Associations ID Format (#25740)
+2024-03-07,Ryan Cragun,981aeabab0,lint: fix proto delta and simports (#25825)
+2024-03-11,Ben Ash,a26d04c77b,Add k8s 1.29 to the set of supported versions (#25870)
+2024-03-13,Thomas Decaux,29dec5dfc4,fix azuread doc user_claim must be sub (#25896)
+2024-03-15,dependabot[bot],674f7b4fc9,Bump github.com/jackc/pgproto3/v2 from 2.3.2 to 2.3.3 in /sdk (#25962)
+2024-03-19,Josh Black,012c3422f8,Add acme clients internal data structures and adjust tests (#26020)
+2024-03-22,Peter Wilson,5a1d20bd35,Audit: Timestamps on sink entries should match the creation time of the audit event (#26088)
+2024-03-25,miagilepner,ec0b17d31c,VAULT-20400: Validate azure container and account name (#26135)
+2024-03-27,NikolaiMagicnet,c9dafc1971,Fixed the URL (#26178)
+2024-04-01,Theron Voran,92c58476ee,docs/vault-secrets-operator: encrypted client cache storage (#25475)
+2024-04-05,Peter Wilson,5c6b8f7b3e,Agent: Improve `TestAutoAuthSelfHealing_TokenFileAuth_SinkOutput` (#26286)
+2024-04-10,Brian Shumate,ba6a9c2160,Docs: WAF: initial cloud access management content (#26321)
+2024-04-12,Josh Black,e94163e475,add regeneration intent log (#26354)
+2024-04-15,Sarah Chavis,6c01838269,fix release notes (#26404)
+2024-04-17,Noelle Daley,55241c2b09,fix: don't show an undefined error in flash msg when unsyncing (#26422)
+2024-04-19,Peter Wilson,7c9e4f39b6,headers test tweaks (#26532)
+2024-04-22,Peter Wilson,1d67c3f3b4,Audit: move validation of audit related options for Enterprise/CE to audit package (#26575)
+2024-04-24,Victor Rodriguez,e7ea297f8c,Add new func RetryUntilAtCadenceWithHandler to testhelpers.go. (#26611)
+2024-04-26,Josh Black,ceb8691126,Add metrics for ACME clients in precomputed queries (#26519)
+2024-04-30,claire bontempo,e94794b346,fix select dropdowns (#26694)
+2024-05-01,Isabelle Kraemer,b4a2e40124,adding private DNS name as EC2 metadata (#25418)
+2024-05-02,Mike Palmiotto,fdc330e622,Add inmem_transactional storage  option for tests (#26780)
+2024-05-06,Meggie,f298ef763a,Fix docker image in developer quickstart (#26805)
+2024-05-08,Melanie Sumner,459e62a6bc,bugfix: dashboard overview heading levels (#26873)
+2024-05-09,Chelsea Shaw,31454c9633,UI: update typescript imports (#26904)
+2024-05-10,Violet Hynes,cd0accf319,Update hcp link dependencies (#26929)
+2024-05-13,Violet Hynes,b5d3c213bb,Update docker to v25.0.5+incompatible (#26953)
+2024-05-15,Violet Hynes,7ac5358185,VAULT-26300 update golang/net to 0.25.0 in sdk (#27041)
+2024-05-16,Chelsea Shaw,2278c8c248,Fix enterprise tests failing after Web REPL a11y updates (#27092)
+2024-05-20,hc-github-team-secure-vault-core,4715b18b76,Update vault-plugin-secrets-azure to v0.19.0 (#27141)
+2024-05-21,hc-github-team-secure-vault-core,c190affa9b,Update vault-plugin-secrets-gcp to v0.19.0 (#27164)
+2024-05-23,Milena Zlaticanin,309d832462,Add AWS Auth WIF docs (#27054)
+2024-05-27,Tero Saarni,4975e699e0,bump etcd client to v3.5.13 (#26660)
+2024-05-30,Chelsea Shaw,83949e8023,UI: Don't show resultant-ACL banner in nested namespace if ancestor wildcard policy  (#27263)
+2024-06-03,Violet Hynes,1d87ed8aaf,Add docs and changelog for PR 9733 (#27313)
+2024-06-05,Chelsea Shaw,67fc1fab4c,UI: Fix aws credential generation sending ttl value when off (#27366)
+2024-06-07,Ryan Cragun,f7c16796ed,lint: fix misspell linter install (#27408)
+2024-06-11,claire bontempo,55547fb81d,UI: Add validation for activity counter config `retention_months` max (#27429)
+2024-06-12,Meggie,346d233ca1,changelog++ (#27462)
+2024-06-13,hc-github-team-secure-vault-core,c966ee651b,Update vault-plugin-auth-jwt to v0.21.0 (#27498)
+2024-06-19,John-Michael Faircloth,ab08d623e8,docs: add note to jwt auth for bound aud changes (#27530)
+2024-06-25,Kuba Wieczorek,c51bdac2c1,[VAULT-27978] Increase writer request timeout from 500ms to 3s in TestConsulFencing_PartitionedLeaderCantWrite to fix flakiness in CI (#27590)
+2024-06-27,John-Michael Faircloth,41bb992c32,docs: update auth/jwt changelog for 1.16.5 and 1.15.11 (#27629)
+2024-07-02,akshya96,01f78f59b1,Add auto-roll billing start date changes CE changes (#27656)
+2024-07-05,Violet Hynes,6a083e7d3e,VAULT-28317 Update vault-hcp-lib to fix resource case bug (#27694)
+2024-07-10,Altabay-HashiCorp,5856ae4ef7,Add administrative_namespace_path as an available parameter in Vault config (#27744)
+2024-07-17,Chelsea Shaw,050a90b2ab,UI: Update date-picker UX in Client Counts (#27796)

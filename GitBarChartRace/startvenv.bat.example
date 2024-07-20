@@ -1,0 +1,22 @@
+if defined INIT_STARTENV (
+    echo "already done, skipping venv setup"
+    goto :End
+)
+set "INIT_STARTENV=INIT_ONCE"
+
+
+echo "setting up virtual env"
+pip3 install virtualenv
+
+virtualenv venv
+call ./venv/Scripts/activate.bat
+
+echo "installing requirements..."
+pip3 install -r requirements.txt
+winget install ffmpeg -v 7.0.1
+
+rem edit this to your ffmpeg bin folder if it's different or you installed in another way
+set PATH=%PATH%;%LOCALAPPDATA%\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-7.0.1-full_build\bin
+
+:End
+rem pip3 freeze
