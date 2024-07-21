@@ -1,0 +1,29 @@
+@echo off
+call startvenv.bat
+
+rem feel free to copy/use this for your own data
+rem sample is simply "line per value" which we count, we can also use lines with weight/score to make it smarter
+
+rem example to generate sample.csv on a repo of your choice:
+rem git -C "c:\Development\repo2" log --reverse "--pretty=%%as,%%an,%%h,%%s" --shortstat >>out/history.csv
+
+rem feel free to edit this in any way you want - as long as we export stats (insertions/deletions) and git log lines
+if not exist "out/history.csv" (
+    echo generating git history..
+
+    echo running git log for repo1
+    git -C "c:\Development\repo1" log --reverse "--pretty=%%as,%%an,%%h,%%s" --shortstat >>out/history.csv
+
+    echo running git log for repo2
+    git -C "c:\Development\repo2" log --reverse "--pretty=%%as,%%an,%%h,%%s" --shortstat >>out/history.csv
+) else (
+    echo history already exists, skipping git command
+)
+
+rem using command line argument for path to repo:
+rem git -C "%1" log --reverse "--pretty=%%as,%%an,%%h,%%s" >history.csv
+
+listToBars.py out/history.csv out/data.csv
+race.py out/data.csv
+ffmpeg -y -i out/video.mp4 -i "Heaven and Hell - Jeremy Blake.mp3" -c:v copy -c:a copy -strict experimental -map 0:v:0 -map 1:a:0 -shortest out/output_video.mp4
+start out/output_video.mp4

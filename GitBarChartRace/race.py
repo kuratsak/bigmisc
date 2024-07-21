@@ -43,7 +43,7 @@ def main(sourceData='out/data.csv'):
         ],
 
         # title and its styles
-        title={'label': 'Commits by Author',
+        title={'label': 'Code lines by Author',
                'size': 40,
                'weight': 'bold',
                'pad': 15
