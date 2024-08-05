@@ -4,3 +4,4 @@ startvenv.bat
 out/*
 *.pyc
 repoRace.bat
+vault.git/*
