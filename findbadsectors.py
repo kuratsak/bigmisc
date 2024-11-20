@@ -44,7 +44,12 @@ def search(path):
         for filename in files:
             totalFiles += 1
             filePath = os.path.join(root, filename)
-            fileSectors, fixedSectors = sectorFix(filePath, True)
+
+            try:
+                fileSectors, fixedSectors = sectorFix(filePath, True)
+            except Exception as e:
+                print("couldn't scan file {}, exception: {}".format(filePath, str(e)))
+                continue
             totalScannedSectors += fileSectors
             totalBadSectors += fixedSectors
             if fixedSectors:
@@ -52,7 +57,8 @@ def search(path):
 
     print("\ncorrupted files:\n{}".format("\n".join(badFiles)))
     print("\nsummary:\ntotal {} bad files out of {}".format(len(badFiles), totalFiles))
-    print("total {} bad sectors out of {}, one in {} is corrupted".format(totalBadSectors, totalScannedSectors, totalScannedSectors / totalBadSectors))
+    print("total {} bad sectors out of {}, ratio {}".format(
+        totalBadSectors, totalScannedSectors, (totalScannedSectors / totalBadSectors) if totalBadSectors else 0))
 
 
 if __name__ == '__main__':
