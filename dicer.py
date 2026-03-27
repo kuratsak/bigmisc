@@ -55,12 +55,13 @@ def analyze_dice_distribution(rolls, die_name="Unknown Die", show_graph=True):
     plt.show()
     return confidence
 
-def analyze_from_string(data_string):
+def analyze_from_string(data_string, name=None):
     non_digits = [d for d in data_string if d not in "123456"]
     if non_digits:
         raise Exception(f"got non-d6 digits:{",".join(non_digits)}")
     rolls = [int(d) for d in data_string if d in "123456"]
-    name = data_string[:4] if len(data_string) >= 4 else data_string
+    if name is None:
+        name = data_string[:4] if len(data_string) >= 4 else data_string
     return analyze_dice_distribution(rolls, die_name=name)
 
 def run_fairness_simulation(iterations=1000, rolls_per_test=300, threshold=95.0):
@@ -75,8 +76,23 @@ def run_fairness_simulation(iterations=1000, rolls_per_test=300, threshold=95.0)
     print("--------------------------------------")
 
 if __name__ == "__main__":
-    run_fairness_simulation()
     if len(sys.argv) > 1:
-        analyze_from_string(sys.argv[1])
+        if sys.argv[1] == "--counts" and len(sys.argv) >= 8:
+            try:
+                counts = [int(x) for x in sys.argv[2:8]]
+                name = sys.argv[8] if len(sys.argv) > 8 else f"counts-{'-'.join(str(c) for c in counts)}"
+                rolls = []
+                for i, count in enumerate(counts):
+                    rolls.extend([i + 1] * count)
+                analyze_dice_distribution(rolls, die_name=name)
+            except ValueError:
+                print("Error: Counts must be six integers.")
+        else:
+            if len(sys.argv) > 3:
+                raise Exception("too many arguments, did you mean to use counts?")
+            analyze_from_string(*sys.argv[1:])
     else:
-        print("Usage: python dice_analyzer.py <rolls_string like 4612232142526>")
+        run_fairness_simulation()
+        print("\nUsage:")
+        print("  python dicer.py 4612232142526... [test name]")
+        print("  python dicer.py --counts 10 12 8 15 9 11 [test name]")
