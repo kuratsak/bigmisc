@@ -1,0 +1,7 @@
+ipython
+numpy
+pandas
+tqdm
+pysubs2
+matplotlib
+yfinance
