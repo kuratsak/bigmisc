@@ -1,0 +1,4 @@
+-r requirements.txt
+isort==7.0.0
+black==25.11.0
+pre_commit==4.5.0
