@@ -146,5 +146,28 @@ def find_break_even(
         current_yield += 0.01
 
 
+def dietz_monthly(start_val, end_val, total_deposits):
+    periods = 12
+    monthly_dep = total_deposits / periods
+    lag_months = 1.5
+
+    # Weight calculation: (Months remaining - Lag) / 12
+    # January (i=0): (12 - 0 - 2) / 12 = 10/12
+    # November (i=10): (12 - 10 - 2) / 12 = 0
+    # December (i=11): (12 - 11 - 2) / 12 = -1/12 -> clipped to 0
+    weighted_sum = sum(
+        monthly_dep * max(0, (periods - i - lag_months) / periods)
+        for i in range(periods)
+    )
+
+    profit = end_val - start_val - total_deposits
+    avg_capital_at_risk = start_val + weighted_sum
+
+    # Return 0 if denominator is 0 to avoid ZeroDivisionError
+    return round(
+        100 * profit / avg_capital_at_risk if avg_capital_at_risk > 0 else 0, 3
+    )
+
+
 # Run Example
 savings(years=30, cut=10)
