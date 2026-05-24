@@ -51,17 +51,17 @@ def analyze_relative_yield(
     fx_ticker="ILSUSD=X",
     # fx_ticker=None,
     # fx_ticker="EURUSD=X",
+    start="2017-04-01",
+    end="2026-05-20",
     use_raw_ratio=None,
-    # use_raw_ratio=True
-    start="2015-04-01",
-    end="2026-04-16",
+    # use_raw_ratio=True,
     future_months=12,
 ):
     if fx_ticker.lower() == "none":
         fx_ticker = None
 
     if use_raw_ratio is not None:
-        use_raw_ratio = use_raw_ratio.lower() in ["raw", "flat"]
+        use_raw_ratio = str(use_raw_ratio).lower() in ["raw", "flat", "true", "yes"]
 
     t1 = t1.upper()
     t2 = t2.upper()
