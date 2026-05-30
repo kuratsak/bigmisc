@@ -51,7 +51,7 @@ def analyze_relative_yield(
     fx_ticker="ILSUSD=X",
     # fx_ticker=None,
     # fx_ticker="EURUSD=X",
-    start="2017-04-01",
+    start="2016-04-01",
     end="2026-05-20",
     use_raw_ratio=None,
     # use_raw_ratio=True,
@@ -75,7 +75,10 @@ def analyze_relative_yield(
     print(f"Full names:\n{t1}:{t1Name}\n{t2}:{t2Name}\n{fx_info}")
 
     data = yf.download(
-        [t1, t2] + ([fx_ticker] if fx_ticker else []), start=start, end=end
+        [t1, t2] + ([fx_ticker] if fx_ticker else []),
+        start=start,
+        end=end,
+        auto_adjust=False,
     )["Close"]
     df = data.dropna()
 
@@ -83,16 +86,18 @@ def analyze_relative_yield(
     p_a = df[t1]
     p_b = df[t2] * (1 if not fx_ticker else df[fx_ticker] / 100)
 
+    print(f"series {t1}:\n{p_a}series {t2}:\n{p_b}")
+
     p_a = drop_outliers(p_a)
     p_b = drop_outliers(p_b)
 
     full_idx = pd.date_range(start=df.index.min(), end=df.index.max(), freq="D")
-    p_a_daily = p_a.reindex(full_idx).ffill(limit=7)
-    p_b_daily = p_b.reindex(full_idx).ffill(limit=7)
+    p_a_daily = p_a.reindex(full_idx).ffill(limit=5).bfill(limit=5)
+    p_b_daily = p_b.reindex(full_idx).ffill(limit=5).bfill(limit=5)
 
     # 2. Rolling 1-Year Yield vs Raw Ratio Toggle
     if use_raw_ratio:
-        ann_gap_full = (p_a_daily / p_b_daily) * 100 - 100
+        ann_gap_full = (p_a_daily / p_b_daily) * 100
     else:
         # Rolling 365-day yield based on DATE, not ROW COUNT
         yield_a = (p_a_daily / p_a_daily.shift(365)) - 1
@@ -127,26 +132,36 @@ def analyze_relative_yield(
         else ann_gap_full.median()
     )
 
-    # 1. Calculate the raw long-term alpha (expanding window)
-    days_passed = np.arange(1, len(p_a_daily) + 1)
-    cum_yield_a = (p_a_daily / p_a_daily.ffill().iloc[0]) ** (365 / days_passed) - 1
-    cum_yield_b = (p_b_daily / p_b_daily.ffill().iloc[0]) ** (365 / days_passed) - 1
-    long_term_alpha_raw = (cum_yield_a - cum_yield_b) * 100
-
-    # 2. Use EMA instead of Median for "soft" outlier rejection
-    # span=63 (~3 months) provides stability without erasing real trends
-    long_term_alpha_smooth = long_term_alpha_raw.ewm(span=63, adjust=False).mean()
-
-    # 3. Trim the noisy start (first year)
-    long_term_alpha = long_term_alpha_smooth.iloc[365:]
-
-    # Noise: 2 Standard Deviations of residuals
-    residuals = y_data - (coeffs[0] * np.log(x_data) + coeffs[1])
-    std_error = np.std(residuals) * 2
-
     fig, ax1 = plt.subplots(figsize=(14, 7))
     ax2 = ax1.twinx()
 
+    # 1. plot the raw long-term alpha (expanding window)
+    if not use_raw_ratio:
+        days_passed = np.arange(1, len(p_a_daily) + 1)
+        cum_yield_a = (p_a_daily / p_a_daily.ffill().bfill().iloc[0]) ** (
+            365 / days_passed
+        ) - 1
+        cum_yield_b = (p_b_daily / p_b_daily.ffill().bfill().iloc[0]) ** (
+            365 / days_passed
+        ) - 1
+        long_term_alpha_raw = (cum_yield_a - cum_yield_b) * 100
+
+        # 2. Use EMA instead of Median for "soft" outlier rejection
+        # span=63 (~3 months) provides stability without erasing real trends
+        long_term_alpha_smooth = long_term_alpha_raw.ewm(span=63, adjust=False).mean()
+
+        # 3. Trim the noisy start (first year)
+        long_term_alpha = long_term_alpha_smooth.iloc[365:]
+        # long term year adjusted yield
+        ax1.plot(
+            long_term_alpha.index,
+            long_term_alpha,
+            color="#E66101",
+            lw=1.5,
+            label="Cumulative Annualized Yield (EMA smoothed)",
+        )
+
+    # annual yield of A/B in scattered dots
     ax1.scatter(
         ann_gap_full.index,
         ann_gap_full,
@@ -156,27 +171,23 @@ def analyze_relative_yield(
         label=f"Annual yield of {t1}/{t2}",
     )
 
-    # long term year adjusted yield
-    ax1.plot(
-        long_term_alpha.index,
-        long_term_alpha,
-        color="#E66101",
-        lw=1.5,
-        label="Cumulative Annualized Yield (EMA smoothed)",
-    )
-
-    # 4. Extrapolation & Confidence Band (~21 trading days per month)
+    # Extrapolation & Confidence Band (~21 trading days per month)
     x_ext = np.arange(1, len(ann_gap) + int(future_months * 21) + 1)
     future_dates = pd.date_range(ann_gap.index[0], periods=len(x_ext), freq="B")
     trend_line = coeffs[0] * np.log(x_ext) + coeffs[1]
 
+    legend = "%" if not use_raw_ratio else "price"
     ax1.plot(
         future_dates,
         trend_line,
         "k--",
         alpha=0.6,
-        label=f"Log Trend (End: {trend_line[-1]:.3f}%)",
+        label=f"Log Trend (End: {trend_line[-1]:.3f} {legend})",
     )
+
+    # Noise: 2 Standard Deviations of residuals
+    residuals = y_data - (coeffs[0] * np.log(x_data) + coeffs[1])
+    std_error = np.std(residuals) * 2
     ax1.fill_between(
         future_dates,
         trend_line - std_error,
@@ -201,7 +212,7 @@ def analyze_relative_yield(
         color="blue",
         ls=":",
         alpha=0.4,
-        label=f"Current Floor ({floor_val:.3f}%)",
+        label=f"Current Floor ({floor_val:.3f} {legend})",
     )
     ax1.axhline(0, color="red", lw=0.5)
 
@@ -209,17 +220,28 @@ def analyze_relative_yield(
     raw_a_growth = (p_a / p_a.iloc[0] - 1) * 100
     raw_b_growth = (p_b / p_b.iloc[0] - 1) * 100
 
-    ax2.plot(raw_a_growth, color="blue", lw=0.8, alpha=0.5, label=f"{t1} Raw %")
-    ax2.plot(raw_b_growth, color="orange", lw=0.8, alpha=0.5, label=f"{t2} Raw %")
-
-    ax2.set_ylabel("Total Asset Growth (%)", color="gray", fontsize=12)
-    # Set right axis limits to keep lines in the upper background
-    ax2.set_ylim(
-        bottom=min(raw_a_growth.min(), raw_b_growth.min()) - 5,
-        top=max(raw_a_growth.max(), raw_b_growth.max()) * 1.3,
+    for_plot_a, for_plot_b = (
+        (raw_a_growth, raw_b_growth) if not use_raw_ratio else (p_a, p_b)
     )
 
-    ax1.set_ylabel("Alpha / Yield Difference (%)")
+    ax2.plot(for_plot_a, color="blue", lw=0.8, alpha=0.5, label=f"{t1} Raw {legend}")
+    ax2.plot(for_plot_b, color="orange", lw=0.8, alpha=0.5, label=f"{t2} Raw {legend}")
+
+    ax2.set_ylabel(f"Total Asset Growth ({legend})", color="gray", fontsize=12)
+
+    a1_min, a1_max = np.percentile(ann_gap_full.dropna(), [2.5, 97.5])
+    a2_min, a2_max = np.percentile(
+        pd.concat([for_plot_a, for_plot_b]).dropna(), [2.5, 97.5]
+    )
+
+    extra_room_a1 = 0.1 * abs(a1_max - a1_min)
+    extra_room_a2 = 0.1 * abs(a2_max - a2_min)
+    ax1.set_ylim(a1_min - extra_room_a1, a1_max + extra_room_a1)
+    ax2.set_ylim(a2_min - extra_room_a2, a2_max + extra_room_a2)
+
+    ax1.set_ylabel(
+        "Alpha / Yield Difference (%)" if not use_raw_ratio else "Raw ratio (%)"
+    )
 
     lines1, labels1 = ax1.get_legend_handles_labels()
     lines2, labels2 = ax2.get_legend_handles_labels()
@@ -235,6 +257,7 @@ def analyze_relative_yield(
     )
     plt.tight_layout()
     plt.show()
+    # import IPython; IPython.embed()
 
 
 def analyze_strict_overlap(t1="SPXS.L", t2="IN-FF1.TA", fx="ILSUSD=X"):
