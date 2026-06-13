@@ -1,3 +1,5 @@
+from datetime import date, timedelta
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -47,12 +49,14 @@ def analyze_relative_yield(
     # t1="CSPX.L",
     # t2="SPXS.MI",
     t2="IN-FF1.TA",  # 1183441, spxs in TASE exchange
-    # t2="CNDX.L",  # 1183441, spxs in TASE exchange
+    # t2="CNDX.L",
     fx_ticker="ILSUSD=X",
     # fx_ticker=None,
     # fx_ticker="EURUSD=X",
-    start="2016-04-01",
-    end="2026-05-20",
+    start=None,
+    # start="2010-04-01",
+    end=None,
+    # end=2026-06-01,
     use_raw_ratio=None,
     # use_raw_ratio=True,
     future_months=12,
@@ -62,6 +66,11 @@ def analyze_relative_yield(
 
     if use_raw_ratio is not None:
         use_raw_ratio = str(use_raw_ratio).lower() in ["raw", "flat", "true", "yes"]
+
+    if not start:
+        start = (date.today() - timedelta(days=15 * 365)).strftime("%Y-%m-%d")
+    if not end:
+        end = (date.today() - timedelta(days=7)).strftime("%Y-%m-%d")
 
     t1 = t1.upper()
     t2 = t2.upper()
@@ -86,7 +95,8 @@ def analyze_relative_yield(
     p_a = df[t1]
     p_b = df[t2] * (1 if not fx_ticker else df[fx_ticker] / 100)
 
-    print(f"series {t1}:\n{p_a}series {t2}:\n{p_b}")
+    print(f"series {t1}:\n{p_a}\n")
+    print(f"series {t2}:\n{p_b}\n")
 
     p_a = drop_outliers(p_a)
     p_b = drop_outliers(p_b)
@@ -123,7 +133,7 @@ def analyze_relative_yield(
     coeffs = np.polyfit(np.log(x_data), y_data, 1)
 
     # Rolling Median & Average (1 year window)
-    rolling_med = ann_gap.rolling(window=365).median()
+    rolling_med = ann_gap.rolling(window=60).median()
     # rolling_avg = ann_gap.rolling(window=365).mean()
 
     floor_val = (
@@ -196,8 +206,17 @@ def analyze_relative_yield(
         alpha=0.15,
         label="95% Noise Band",
     )
+    med_clean = rolling_med.dropna()
+    total_med = len(med_clean)
+    above_pct = (med_clean > 0).sum() / total_med * 100 if total_med > 0 else 0.0
+    below_pct = (med_clean < 0).sum() / total_med * 100 if total_med > 0 else 0.0
+
     ax1.plot(
-        ann_gap.index, rolling_med, color="blue", lw=1.5, label="Rolling 1Y Median"
+        ann_gap.index,
+        rolling_med,
+        color="blue",
+        lw=1.5,
+        label=f"Rolling 1Y Median (Above 0: {above_pct:.1f}%, Below 0: {below_pct:.1f}%)",
     )
     # ax1.plot(
     #     ann_gap.index,
@@ -251,6 +270,7 @@ def analyze_relative_yield(
 
     print(f"Calculated Structural Floor (12M Median): {floor_val:.3f}%")
     print(f"Projected Long-term Trend: {trend_line[-1]:.3f}%")
+    print(f"Rolling Median - Above 0: {above_pct:.2f}%, Below 0: {below_pct:.2f}%")
 
     plt.title(
         f"Structural Efficiency vs Total Growth: {t1} vs {t2}\n\n{t1}:{t1Name}\n{t2}:{t2Name}"
