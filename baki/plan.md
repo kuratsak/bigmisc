@@ -54,9 +54,10 @@ CORE ARCHITECTURE:
 - Generate an editable, target-scoped action ledger `baki_review_[target_name].txt` containing a metadata header (source path, target path, manifest timestamp) followed by line-by-line actions:
   * `[COPY] path/to/file`     (New file present on source, missing on target)
   * `[SYNC] path/to/file`     (Modified file on source; size/mtime/hash changed)
-  * `[DELETE] path/to/file`   (File missing on source, exists on target)
+  * `[MISSING] path/to/file`  (File exists on target, missing on source; review default, no deletion unless manually edited to `[DELETE]`)
   * `[MKDIR] path/to/dir`     (Directory present on source, missing on target)
-  * `[RMDIR] path/to/dir`     (Directory missing on source, exists on target)
+  * `[RMDIR] path/to/dir`     (Empty directory on target that was deleted on source)
+  * `[IGNORED] path/to/file`  (Filtered out by excludes without matching includes)
   * `[SKIP] path/to/file`     (Identical files or user-bypassed entries)
   * `# [WARNING_BIT_ROT] [ACTION] path/to/file` (Unsafe changes flagged for manual inspection)
 
@@ -65,9 +66,10 @@ CORE ARCHITECTURE:
 - Read and parse the specified review ledger file (e.g. `baki sync --review baki_review_[target_name].txt`).
 - Validate source and target paths from the review header.
 - Execute verified operations:
-  * Directory creations (`MKDIR`) and directory removals (`RMDIR`).
-  * Chunked file copy/sync (`COPY`, `SYNC`) preserving mtime attributes.
-  * File removals (`DELETE`).
-  * Ignore lines commented with `#` or marked `[SKIP]`.
+  * 1. Directory creations (`MKDIR`).
+  * 2. Chunked file copy/sync (`COPY`, `SYNC`) preserving mtime attributes.
+  * 3. Explicit file removals (`DELETE` - only if manually edited from `[MISSING]` by user).
+  * 4. Safe empty directory removals (`RMDIR`).
+  * Ignore lines commented with `#` or marked `[SKIP]`, `[IGNORED]`, `[MISSING]`.
 - Print progress indicator with file counts, transferred bytes, and throughput.
 - Robust error handling ensuring failed individual operations do not abort the entire batch unhandled.
