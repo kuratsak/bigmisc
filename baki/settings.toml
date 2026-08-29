@@ -1,8 +1,11 @@
 [paths]
-source = "D:\\Dani"
+source = "d:\\Dani"
+# source = "d:\\Dani\\Downloads\\Movies\\Animation\\Brave (2012) [1080p]"
 targets = [
+    # "C:\\Backup\\Dani\\Downloads\\Movies\\Animation\\Brave (2012) [1080p]",
+    # "D:\\temp\\Backup\\Dani\\Downloads\\Movies",
     "C:\\Backup\\Dani",
-    "D:\\temp\\Backup\\Dani"
+    "D:\\temp\\Backup\\Dani",
 ]
 
 [filters]
@@ -11,6 +14,14 @@ excludes = [
     # ".DS_Store",
     # "cache/*",
     # "node_modules/*"
+    "*/.git/*",
+    "*/yt-dd-dlp/*",
+    "*/venv/*",
+    "*/Music-wma-only-March-2025/*",
+    "*.thumbnails",
+    "*/__pycache__/*",
+    "*chrome.lnk",
+
 ]
 includes = [
     # "*.important_extension"
