@@ -1,0 +1,17 @@
+[paths]
+source = "d:\\Root"
+targets = [
+    "C:\\Backup\\Root",
+    # "D:\\temp\\Backup\\Root",
+]
+
+[filters]
+excludes = [
+    # "*.tmp",
+    # ".DS_Store",
+    # "cache/*",
+    # "node_modules/*",
+]
+includes = [
+    # "*.important_extension",
+]
